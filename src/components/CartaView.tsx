@@ -97,10 +97,10 @@ function CategorySection({ cat, index }: { cat: Category; index: number }) {
 }
 
 const CHIP_STYLES = [
-  "bg-[var(--chip1-bg)] text-[var(--chip1-fg)]",
-  "bg-[var(--chip2-bg)] text-[var(--chip2-fg)]",
-  "bg-[var(--chip3-bg)] text-[var(--chip3-fg)]",
-  "bg-[var(--chip4-bg)] text-[var(--chip4-fg)]",
+  "bg-[#f8dde7] text-[#b95780]", // pink
+  "bg-[#d9ebf4] text-[#3f86ab]", // blue
+  "bg-[#dcf1f1] text-[#3f9599]", // teal
+  "bg-[#fbeac6] text-[#a9772a]", // butter
 ];
 
 function CategoryChips({ cats, hidden }: { cats: Category[]; hidden: boolean }) {
@@ -156,8 +156,8 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
           </div>
 
           <h1 className="mt-5 font-display text-[5.5rem] font-black uppercase leading-[0.82] sm:text-[7rem]">
-            <span style={{ color: "var(--cover-1)" }}>{copy.coverWord.slice(0, Math.ceil(copy.coverWord.length / 2))}</span>
-            <span style={{ color: "var(--cover-2)" }}>{copy.coverWord.slice(Math.ceil(copy.coverWord.length / 2))}</span>
+            <span style={{ color: "var(--rosa)" }}>{copy.coverWord.slice(0, Math.ceil(copy.coverWord.length / 2))}</span>
+            <span style={{ color: "#5fabae" }}>{copy.coverWord.slice(Math.ceil(copy.coverWord.length / 2))}</span>
           </h1>
           <p className="mt-2 text-sm font-bold uppercase tracking-[0.5em] text-espresso/70">{copy.coverLang}</p>
           <p className="mx-auto mt-5 max-w-md text-espresso/70">{copy.intro}</p>

@@ -154,7 +154,7 @@ function Marquee({ words }: { words: string[] }) {
 function Destacados({ copy }: { copy: HomeCopy }) {
   const d = copy.destacados;
   return (
-    <section id="destacados" className="relative px-5 py-24 sm:py-32 bg-[var(--sec-a)]">
+    <section id="destacados" className="relative px-5 py-24 sm:py-32 bg-[#f8dde7]">
       <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
           <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em]" style={{ color: "var(--azul-deep)" }}>
@@ -380,7 +380,7 @@ const STRIP_ROT = [-2, 1.5, -1, 2, -1.5];
 function ReviewsSection({ copy }: { copy: HomeCopy }) {
   const r = copy.reviews;
   return (
-    <section id="resenas" className="px-5 py-24 sm:py-32 bg-[var(--sec-b)]">
+    <section id="resenas" className="px-5 py-24 sm:py-32 bg-[#d9ebf4]">
       <div className="mx-auto max-w-4xl">
         <div className="grid items-center gap-12 sm:grid-cols-2">
           <Reveal rotate={3}>

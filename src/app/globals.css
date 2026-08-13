@@ -27,6 +27,16 @@
   --sec-a: #f8dde7;
   --sec-b: #d9ebf4;
 
+  /* carta chip palette (cycled) */
+  --chip1-bg: #f8dde7; --chip1-fg: #b95780;
+  --chip2-bg: #d9ebf4; --chip2-fg: #3f86ab;
+  --chip3-bg: #dcf1f1; --chip3-fg: #3f9599;
+  --chip4-bg: #fbeac6; --chip4-fg: #a9772a;
+
+  /* carta cover display letters (ME / NÚ) */
+  --cover-1: #ecabc4;
+  --cover-2: #5fabae;
+
   /* natural tones kept for the food illustrations (cutouts) */
   --pistacho: #92bd6e;
   --pistacho-deep: #6f9a4c;
@@ -69,6 +79,16 @@
   --turquesa-soft: #eef0d8;
   --sec-a: #eef0d8;       /* destacados tint → pale green */
   --sec-b: #f8ecc7;       /* reseñas tint → pale butter */
+
+  /* carta chips → warm variety */
+  --chip1-bg: #fde8c9; --chip1-fg: #a9772a;
+  --chip2-bg: #e5efd2; --chip2-fg: #6d8a3f;
+  --chip3-bg: #fbe1cf; --chip3-fg: #c05532;
+  --chip4-bg: #fff2d0; --chip4-fg: #b98a2e;
+
+  /* carta cover letters → terracota / pistacho */
+  --cover-1: #d96b43;
+  --cover-2: #7e9c55;
 
   background-color: var(--paper);
   color: var(--espresso);

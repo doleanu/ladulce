@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AlternativeHomePage() {
   return (
     <div className="legacy-theme">
-      <HomeView copy={HOME_ES} />
+      <HomeView copy={{ ...HOME_ES, cartaHref: "/alternative/carta" }} />
     </div>
   );
 }

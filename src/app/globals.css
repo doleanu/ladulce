@@ -23,6 +23,10 @@
   --turquesa: #bce8e9;
   --turquesa-soft: #dcf1f1;
 
+  /* section tints (destacados / reseñas) */
+  --sec-a: #f8dde7;
+  --sec-b: #d9ebf4;
+
   /* natural tones kept for the food illustrations (cutouts) */
   --pistacho: #92bd6e;
   --pistacho-deep: #6f9a4c;
@@ -35,6 +39,39 @@
   --espresso: #2c2723;
   --espresso-soft: #5b534b;
   --sombra: rgba(44, 39, 35, 0.16);
+}
+
+/* Legacy warm palette — used at /alternative to preview the original coloring.
+   Same elements, old colours: remaps every brand token back to the original
+   terracotta / cream / pistachio / butter scheme. */
+.legacy-theme {
+  --paper: #faf0dd;
+  --crema: #fff8ea;
+  --espresso: #3b2a1e;
+  --espresso-soft: #5a4232;
+  --sombra: rgba(59, 42, 30, 0.16);
+
+  --terracota: #d96b43;
+  --terracota-deep: #c05532;
+  --pistacho: #a6c17d;
+  --pistacho-deep: #7e9c55;
+  --melocoton: #f6a97e;
+  --melocoton-deep: #ef8a58;
+  --mantequilla: #f2cd5e;
+
+  /* new-scheme roles mapped back to the old warm palette */
+  --azul: #d96b43;        /* action buttons → terracota */
+  --azul-deep: #7e9c55;   /* eyebrows → pistacho-deep */
+  --azul-soft: #e7efd6;
+  --rosa: #f2cd5e;        /* → mantequilla */
+  --rosa-soft: #f8ecc7;
+  --turquesa: #a6c17d;    /* → pistacho */
+  --turquesa-soft: #eef0d8;
+  --sec-a: #eef0d8;       /* destacados tint → pale green */
+  --sec-b: #f8ecc7;       /* reseñas tint → pale butter */
+
+  background-color: var(--paper);
+  color: var(--espresso);
 }
 
 html {

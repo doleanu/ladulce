@@ -45,7 +45,7 @@ export const CATEGORY_IMAGES: Record<string, string> = {
   postres: "/menu/postres.jpg",
   zumos: "/photos/drink-pink.jpg",
   cafe: "/photos/coffee.jpg",
-  refrescos: "/photos/kombucha.jpg",
+  refrescos: "/photos/softdrinks.jpg",
   cerveza: "/photos/beer.jpg",
   cocteles: "/photos/cocktail.jpg",
 };
@@ -62,10 +62,10 @@ export const CATEGORY_IMAGE_POS: Record<string, string> = {
   ensaladas: "center 50%",
   picoteo: "center 55%",
   cocteles: "center 45%",
-  cerveza: "center 45%",
+  cerveza: "center 50%",
   cafe: "center 55%",
   zumos: "center 42%",
-  refrescos: "center 45%",
+  refrescos: "center 50%",
   brunch: "center 45%",
   desayunos: "center 50%",
 };

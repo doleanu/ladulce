@@ -12,6 +12,10 @@ const config: Config = {
         mantequilla: "var(--mantequilla)",
         terracota: "var(--terracota)",
         espresso: "var(--espresso)",
+        azul: "var(--azul)",
+        "azul-deep": "var(--azul-deep)",
+        rosa: "var(--rosa)",
+        turquesa: "var(--turquesa)",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],

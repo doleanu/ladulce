@@ -1,15 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
-import {
-  business,
-  copy,
-  mainQuickReplies,
-  matchIntent,
-  orderKindOptions,
-  orderWhenOptions,
-  quickReplies,
-} from "@/lib/chatAssistant";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { getChat, matchIntent, type Locale } from "@/lib/chatAssistant";
 
 type Cta = { label: string; href: string };
 
@@ -58,7 +50,18 @@ function SendIcon({ className }: { className?: string }) {
   );
 }
 
-export default function ChatWidget() {
+export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
+  const {
+    business,
+    copy,
+    quickReplies,
+    mainQuickReplies,
+    orderKindOptions,
+    orderWhenOptions,
+    cartaHref,
+    whatsappLink,
+    menuMessage,
+  } = useMemo(() => getChat(locale), [locale]);
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -92,15 +95,25 @@ export default function ChatWidget() {
       return;
     }
     if (intent === "hours") {
-      reply(copy.hours, [quickReplies.order, quickReplies.menu]);
+      reply(copy.hours, [quickReplies.reserve, quickReplies.menu]);
       return;
     }
     if (intent === "menu") {
-      reply(copy.menu(), [quickReplies.order, quickReplies.hours]);
+      reply(menuMessage, [quickReplies.reserve, quickReplies.hours], {
+        label: copy.menuCta,
+        href: cartaHref,
+      });
+      return;
+    }
+    if (intent === "reserve") {
+      reply(copy.reserve, [quickReplies.menu, quickReplies.hours], {
+        label: copy.waCta,
+        href: whatsappLink,
+      });
       return;
     }
     if (intent === "location") {
-      reply(copy.location, [quickReplies.order, quickReplies.hours], {
+      reply(copy.location, [quickReplies.reserve, quickReplies.hours], {
         label: copy.mapsCta,
         href: business.maps,
       });
@@ -200,7 +213,7 @@ export default function ChatWidget() {
                     href={m.cta.href}
                     target={m.cta.href.startsWith("http") ? "_blank" : undefined}
                     rel={m.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="mt-2 inline-block rounded-full bg-pistacho px-4 py-2 text-xs font-semibold text-espresso shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
+                    className="mt-2 inline-block rounded-full bg-azul px-4 py-2 text-xs font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
                   >
                     {m.cta.label}
                   </a>

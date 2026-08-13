@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { CartaView } from "@/components/CartaView";
 import { CARTA_EN } from "@/lib/carta-data";
+import { FULL_ADDRESS } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Digital menu — La Dulce | Los Abrigos",
+  title: "Menu",
   description:
-    "Full menu at La Dulce: brunch, breakfast, burgers, salads, coffee, wine and cocktails. Los Abrigos, Tenerife. Real prices.",
-  robots: { index: false, follow: false },
-  alternates: { languages: { es: "/carta", en: "/carta/en" } },
+    "Full menu at La Dulce: brunch, breakfast, burgers, salads, coffee, wine and cocktails. Los Abrigos, Tenerife.",
+  alternates: {
+    canonical: "/en/carta",
+    languages: { es: "/carta", en: "/en/carta", "x-default": "/carta" },
+  },
 };
 
 export default function CartaPageEn() {
@@ -26,21 +29,23 @@ export default function CartaPageEn() {
   return (
     <>
       {/* eslint-disable-next-line react/no-danger */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CartaView
         carta={CARTA_EN}
         copy={{
+          homeHref: "/en",
+          coverWord: "MENU",
+          coverLang: "English",
           kicker: "Digital menu",
           title: "Our menu",
-          intro: "Brunch, specialty coffee and cocktails in Los Abrigos. Transcribed from our real menu.",
+          intro: "Brunch, specialty coffee and cocktails in Los Abrigos.",
+          food: "Food",
+          drinks: "Drinks",
           call: "Call",
           directions: "Get directions",
-          footnote: "Menu transcribed from the real version published on ladulcelosabrigos.es.",
-          footerAddress: "Av. los Abrigos, 2, 38618 Los Abrigos, Santa Cruz de Tenerife",
-          demoNote: "Demo site — unofficial design proposal. Not affiliated with the business.",
+          footnote: "Prices may vary. Please check the in-house menu for the definitive version.",
+          footerAddress: FULL_ADDRESS,
+          demoNote: "",
           webBy: "Website by",
           back: "← Back home",
           langSwitchLabel: "Español",

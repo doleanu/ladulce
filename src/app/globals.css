@@ -3,19 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --paper: #faf0dd;
-  --crema: #fff8ea;
-  --pistacho: #a6c17d;
-  --pistacho-deep: #7e9c55;
+  /* Brand palette — aligned to La Dulce's official identity (pink + teal on
+     off-white, black text). Legacy token names kept so components need no
+     rewrite: --terracota is now the brand ROSE, --pistacho the brand TEAL,
+     --espresso a warm near-black. */
+  --paper: #f6f3ed;
+  --crema: #fffdf8;
+
+  /* rose (brand primary accent — text: eyebrows, prices, links) */
+  --terracota: #cf6f8f;
+  --terracota-deep: #b95780;
+  --rosa: #ecabc4;
+  --rosa-soft: #f8dde7;
+
+  /* blue (brand action colour — buttons, active states) + aqua tint */
+  --azul: #4e9ec4;
+  --azul-deep: #3f86ab;
+  --azul-soft: #d9ebf4;
+  --turquesa: #bce8e9;
+  --turquesa-soft: #dcf1f1;
+
+  /* natural tones kept for the food illustrations (cutouts) */
+  --pistacho: #92bd6e;
+  --pistacho-deep: #6f9a4c;
   --melocoton: #f6a97e;
   --melocoton-deep: #ef8a58;
   --mantequilla: #f2cd5e;
   --ambar: #e39b3b;
-  --terracota: #d96b43;
-  --terracota-deep: #c05532;
-  --espresso: #3b2a1e;
-  --espresso-soft: #5a4232;
-  --sombra: rgba(59, 42, 30, 0.16);
+
+  /* near-black ink for text and dark sections */
+  --espresso: #2c2723;
+  --espresso-soft: #5b534b;
+  --sombra: rgba(44, 39, 35, 0.16);
 }
 
 html {
@@ -197,6 +216,15 @@ body::after {
 }
 
 ::selection {
-  background: var(--mantequilla);
+  background: var(--rosa-soft);
   color: var(--espresso);
+}
+
+/* Horizontal category nav on the carta: scrollable without a visible bar */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

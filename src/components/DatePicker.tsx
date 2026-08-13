@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const LOCALE = "es-ES";
 // 2024-01-01 was a Monday — a fixed reference week to read localized
 // Mon..Sun weekday labels from, regardless of what day "today" is.
 const REF_MONDAY = new Date(2024, 0, 1);
@@ -41,12 +40,17 @@ export function DatePicker({
   onChange,
   placeholder,
   maxDaysAhead = 60,
+  locale = "es",
 }: {
   value: string;
   onChange: (iso: string) => void;
   placeholder: string;
   maxDaysAhead?: number;
+  locale?: "es" | "en";
 }) {
+  const LOCALE = locale === "en" ? "en-GB" : "es-ES";
+  const prevLabel = locale === "en" ? "Previous month" : "Mes anterior";
+  const nextLabel = locale === "en" ? "Next month" : "Mes siguiente";
   const today = startOfDay(new Date());
   const maxDate = new Date(today);
   maxDate.setDate(maxDate.getDate() + maxDaysAhead);
@@ -135,7 +139,7 @@ export function DatePicker({
               }
               disabled={!canGoPrev}
               className="rounded-full p-1.5 text-espresso/70 transition-colors hover:bg-espresso/10 disabled:cursor-not-allowed disabled:opacity-30"
-              aria-label="Mes anterior"
+              aria-label={prevLabel}
             >
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
                 <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -149,7 +153,7 @@ export function DatePicker({
               }
               disabled={!canGoNext}
               className="rounded-full p-1.5 text-espresso/70 transition-colors hover:bg-espresso/10 disabled:cursor-not-allowed disabled:opacity-30"
-              aria-label="Mes siguiente"
+              aria-label={nextLabel}
             >
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
                 <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

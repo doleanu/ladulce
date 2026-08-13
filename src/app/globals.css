@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #faf0dd;
+  --crema: #fff8ea;
+  --pistacho: #a6c17d;
+  --pistacho-deep: #7e9c55;
+  --melocoton: #f6a97e;
+  --melocoton-deep: #ef8a58;
+  --mantequilla: #f2cd5e;
+  --ambar: #e39b3b;
+  --terracota: #d96b43;
+  --terracota-deep: #c05532;
+  --espresso: #3b2a1e;
+  --espresso-soft: #5a4232;
+  --sombra: rgba(59, 42, 30, 0.16);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--espresso);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- paper fibre texture over everything ---- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23p)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144;
+}
+
+.font-display-wonk {
+  font-family: var(--font-display), Georgia, serif;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+
+/* ---- hard paper shadow for every cut-out ---- */
+.cut {
+  filter: drop-shadow(2.5px 3.5px 0 var(--sombra));
+}
+
+.cut-deep {
+  filter: drop-shadow(4px 6px 0 var(--sombra));
+}
+
+/* ---- paper card: uneven radius, tiny rotation, lifts on hover ---- */
+@layer components {
+  .paper-card {
+    background: var(--crema);
+    border-radius: 22px 26px 18px 28px;
+    box-shadow: 3px 4px 0 var(--sombra);
+    transform: rotate(var(--r, 0deg));
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (hover: hover) {
+  .paper-card:hover {
+    transform: rotate(calc(var(--r, 0deg) * 1.8)) translateY(-7px);
+    box-shadow: 7px 12px 0 var(--sombra);
+  }
+}
+
+/* ---- hero cut-outs settle into place, once, staggered ---- */
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(-26px) rotate(calc(var(--r, 0deg) + 11deg)) scale(1.08);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--r, 0deg)) scale(1);
+  }
+}
+
+.settle {
+  transform: rotate(var(--r, 0deg));
+  animation: settle 0.85s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes ink {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ink {
+  animation: ink 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* ---- scroll reveal: shapes glued down as you scroll ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) rotate(var(--rr, -2.5deg));
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--rd, 0ms);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+/* ---- marquee ---- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 36s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- torn paper strips ---- */
+.torn {
+  clip-path: polygon(
+    0% 9%, 3% 0%, 10% 7%, 18% 1%, 27% 8%, 36% 2%, 45% 9%, 55% 1%,
+    64% 8%, 73% 2%, 82% 9%, 91% 1%, 97% 6%, 100% 11%,
+    100% 91%, 96% 100%, 88% 93%, 79% 99%, 70% 92%, 60% 100%,
+    50% 93%, 40% 99%, 30% 92%, 21% 100%, 12% 93%, 5% 98%, 0% 90%
+  );
+}
+
+/* ---- steam wiggle on the hero cup ---- */
+@keyframes steam {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-3px) scaleX(1.06);
+    opacity: 0.55;
+  }
+}
+
+.steam-line {
+  transform-origin: 50% 100%;
+  animation: steam 3.2s ease-in-out infinite;
+}
+
+.steam-line-2 {
+  animation-delay: 1.1s;
+}
+
+/* ---- reduced motion: everything static & instant ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .settle,
+  .ink,
+  .steam-line {
+    animation: none !important;
+    opacity: 1;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .paper-card {
+    transition: none;
+  }
+}
+
+::selection {
+  background: var(--mantequilla);
+  color: var(--espresso);
+}

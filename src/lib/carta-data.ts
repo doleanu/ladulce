@@ -57,7 +57,7 @@ export const CATEGORY_IMAGE_POS: Record<string, string> = {
   burgers: "center 50%",
   pancakes: "center 55%",
   tostas: "center 62%",
-  pulgas: "center 55%",
+  pulgas: "center 50%",
   bocadillos: "center 55%",
   ensaladas: "center 50%",
   picoteo: "center 55%",

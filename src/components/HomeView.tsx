@@ -579,7 +579,7 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
           </div>
           <a
             href="#reservar"
-            className="inline-flex items-center gap-2 rounded-full bg-azul px-4 py-2 text-sm font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-w-[8.5rem] items-center justify-center gap-2 rounded-full bg-azul px-4 py-2 text-sm font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
           >
             <WhatsAppIcon className="h-4 w-4" />
             {copy.nav.reservar}

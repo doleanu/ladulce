@@ -48,8 +48,9 @@ export default function CartaPage() {
           demoNote: "",
           webBy: "Web de",
           back: "← Volver al inicio",
-          langSwitchLabel: "English",
-          langSwitchHref: "/en/carta",
+          locale: "es",
+          esHref: "/carta",
+          enHref: "/en/carta",
         }}
       />
     </>

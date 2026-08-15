@@ -26,8 +26,9 @@ type Copy = {
   demoNote: string;
   webBy: string;
   back: string;
-  langSwitchLabel: string;
-  langSwitchHref: string;
+  locale: "es" | "en";
+  esHref: string;
+  enHref: string;
 };
 
 const DRINK_SET = new Set<string>(DRINK_IDS);
@@ -135,10 +136,23 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
           <a href={copy.homeHref} className="font-display text-lg font-bold text-espresso sm:text-xl">
             La Dulce
           </a>
-          <div className="flex items-center gap-4">
-            <a href={copy.langSwitchHref} className="text-xs font-bold uppercase tracking-wide text-terracota hover:text-espresso">
-              {copy.langSwitchLabel}
-            </a>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="inline-flex items-center rounded-full border border-espresso/15 bg-crema p-0.5 text-xs font-bold">
+              <a
+                href={copy.esHref}
+                aria-label="Cambiar a español"
+                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "es" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
+              >
+                ES
+              </a>
+              <a
+                href={copy.enHref}
+                aria-label="Switch to English"
+                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "en" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
+              >
+                EN
+              </a>
+            </div>
             <a href={copy.homeHref} className="text-sm font-semibold text-espresso hover:text-terracota">
               {copy.back}
             </a>

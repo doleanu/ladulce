@@ -26,9 +26,10 @@ type Copy = {
   demoNote: string;
   webBy: string;
   back: string;
-  locale: "es" | "en";
+  locale: "es" | "en" | "de";
   esHref: string;
   enHref: string;
+  deHref: string;
 };
 
 const DRINK_SET = new Set<string>(DRINK_IDS);
@@ -151,6 +152,13 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
                 className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "en" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
               >
                 EN
+              </a>
+              <a
+                href={copy.deHref}
+                aria-label="Auf Deutsch anzeigen"
+                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "de" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
+              >
+                DE
               </a>
             </div>
             <a href={copy.homeHref} className="text-sm font-semibold text-espresso hover:text-terracota">

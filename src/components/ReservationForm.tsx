@@ -15,7 +15,7 @@ const TIME_SLOTS = Array.from({ length: 26 }, (_, i) => {
   return `${h}:${m}`;
 });
 
-type Locale = "es" | "en";
+type Locale = "es" | "en" | "de";
 
 const T = {
   es: {
@@ -44,6 +44,19 @@ const T = {
     submit: "Book via WhatsApp",
     note: "On send, WhatsApp opens with your booking pre-written — just confirm it.",
   },
+  de: {
+    name: "Name",
+    namePlaceholder: "Wie heißt du?",
+    date: "Datum",
+    datePlaceholder: "Wähle einen Tag",
+    time: "Uhrzeit",
+    timePlaceholder: "Wähle eine Uhrzeit",
+    people: "Personen",
+    extra: "Sonst noch etwas, das wir wissen sollten? (optional)",
+    extraPlaceholder: "Allergien, Kinderstuhl…",
+    submit: "Per WhatsApp reservieren",
+    note: "Beim Senden öffnet sich WhatsApp mit deiner fertig geschriebenen Reservierung — du musst sie nur noch bestätigen.",
+  },
 } as const;
 
 function formatDate(iso: string, locale: Locale) {
@@ -61,6 +74,15 @@ function buildMessage(
     const lines = [
       `Hi La Dulce! I'm ${name || "—"}.`,
       `I'd like to book a table on the terrace for ${peopleText}${date ? ` on ${formatDate(date, locale)}` : ""}${time ? ` at ${time}` : ""}.`,
+    ];
+    if (message.trim()) lines.push(message.trim());
+    return lines.join(" ");
+  }
+  if (locale === "de") {
+    const peopleText = people === "9+" ? "eine Gruppe von 9 oder mehr Personen" : `${people} ${people === "1" ? "Person" : "Personen"}`;
+    const lines = [
+      `Hallo La Dulce! Ich bin ${name || "—"}.`,
+      `Ich möchte gerne einen Tisch auf der Terrasse für ${peopleText}${date ? ` am ${formatDate(date, locale)}` : ""}${time ? ` um ${time} Uhr` : ""} reservieren.`,
     ];
     if (message.trim()) lines.push(message.trim());
     return lines.join(" ");

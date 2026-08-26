@@ -91,13 +91,59 @@ function Leader({ d }: { d: string }) {
   );
 }
 
-export default function Barraquito({ className = "" }: { className?: string }) {
+type BarraquitoLocale = "es" | "en" | "de";
+
+const ARIA_LABEL: Record<BarraquitoLocale, string> = {
+  es: "Diagrama de las capas de un barraquito: leche condensada, Licor 43, café espresso, leche caliente, espuma, canela y corteza de limón",
+  en: "Diagram of a barraquito's layers: condensed milk, Licor 43, espresso coffee, hot milk, milk foam, cinnamon and lemon peel",
+  de: "Diagramm der Schichten eines Barraquito: Kondensmilch, Licor 43, Espresso-Kaffee, heiße Milch, Milchschaum, Zimt und Zitronenschale",
+};
+
+const LABELS: Record<
+  BarraquitoLocale,
+  {
+    espuma: [string, string];
+    cafe: [string, string];
+    condensada: [string, string];
+    canela: [string, string];
+    caliente: [string, string];
+    licor: [string, string];
+  }
+> = {
+  es: {
+    espuma: ["Espuma de leche", "la corona, siempre generosa"],
+    cafe: ["Café espresso", "el corazón del vaso"],
+    condensada: ["Leche condensada", "la base dulce"],
+    canela: ["Canela y limón", "el aroma que lo remata"],
+    caliente: ["Leche caliente", "suave, sin prisa"],
+    licor: ["Licor 43", "el toque canario"],
+  },
+  en: {
+    espuma: ["Milk foam", "the crown, always generous"],
+    cafe: ["Espresso coffee", "the heart of the glass"],
+    condensada: ["Condensed milk", "the sweet base"],
+    canela: ["Cinnamon & lemon", "the aroma that finishes it"],
+    caliente: ["Hot milk", "smooth, unhurried"],
+    licor: ["Licor 43", "the Canarian touch"],
+  },
+  de: {
+    espuma: ["Milchschaum", "die Krone, immer großzügig"],
+    cafe: ["Espresso-Kaffee", "das Herz des Glases"],
+    condensada: ["Kondensmilch", "die süße Basis"],
+    canela: ["Zimt & Zitrone", "das Aroma, das alles abrundet"],
+    caliente: ["Heiße Milch", "sanft, ohne Eile"],
+    licor: ["Licor 43", "die kanarische Note"],
+  },
+};
+
+export default function Barraquito({ className = "", locale = "es" }: { className?: string; locale?: BarraquitoLocale }) {
+  const t = LABELS[locale];
   return (
     <svg
       viewBox="0 28 764 480"
       className={className}
       role="img"
-      aria-label="Diagrama de las capas de un barraquito: leche condensada, Licor 43, café espresso, leche caliente, espuma, canela y corteza de limón"
+      aria-label={ARIA_LABEL[locale]}
     >
       <defs>
         <clipPath id="vaso">
@@ -178,28 +224,28 @@ export default function Barraquito({ className = "" }: { className?: string }) {
       {/* ---- annotations · right ---- */}
       <Leader d="M406 140 C428 138 446 136 460 134" />
       <Chip x={482} y={130} fill="var(--crema)" ink="var(--espresso)" n="5" />
-      <Label x={504} y={136} side="right" name="Espuma de leche" caption="la corona, siempre generosa" />
+      <Label x={504} y={136} side="right" name={t.espuma[0]} caption={t.espuma[1]} />
 
       <Leader d="M412 306 C432 304 448 302 460 301" />
       <Chip x={482} y={297} fill="#4a3323" ink="var(--crema)" n="3" />
-      <Label x={504} y={303} side="right" name="Café espresso" caption="el corazón del vaso" />
+      <Label x={504} y={303} side="right" name={t.cafe[0]} caption={t.cafe[1]} />
 
       <Leader d="M406 440 C428 442 446 443 460 443" />
       <Chip x={482} y={439} fill="var(--crema)" ink="var(--espresso)" n="1" />
-      <Label x={504} y={445} side="right" name="Leche condensada" caption="la base dulce" />
+      <Label x={504} y={445} side="right" name={t.condensada[0]} caption={t.condensada[1]} />
 
       {/* ---- annotations · left ---- */}
       <Leader d="M330 96 C300 84 276 78 258 76" />
       <Chip x={236} y={72} fill="var(--pistacho)" ink="var(--espresso)" n="6" />
-      <Label x={214} y={78} side="left" name="Canela y limón" caption="el aroma que lo remata" />
+      <Label x={214} y={78} side="left" name={t.canela[0]} caption={t.canela[1]} />
 
       <Leader d="M288 218 C268 216 254 215 240 214" />
       <Chip x={218} y={210} fill="#f3ddc0" ink="var(--espresso)" n="4" />
-      <Label x={196} y={216} side="left" name="Leche caliente" caption="suave, sin prisa" />
+      <Label x={196} y={216} side="left" name={t.caliente[0]} caption={t.caliente[1]} />
 
       <Leader d="M290 386 C270 386 256 385 242 384" />
       <Chip x={220} y={380} fill="var(--ambar)" ink="var(--espresso)" n="2" />
-      <Label x={198} y={386} side="left" name="Licor 43" caption="el toque canario" />
+      <Label x={198} y={386} side="left" name={t.licor[0]} caption={t.licor[1]} />
 
       {/* steam */}
       <path

@@ -20,11 +20,13 @@ import {
 
 const WA = `https://wa.me/${SITE.whatsapp}`;
 
-function waReserva(locale: "es" | "en") {
+function waReserva(locale: "es" | "en" | "de") {
   const text =
     locale === "en"
       ? "Hi La Dulce! I'd like to book a table on the terrace."
-      : "¡Hola La Dulce! Me gustaría reservar mesa en la terraza.";
+      : locale === "de"
+        ? "Hallo La Dulce! Ich möchte gerne einen Tisch auf der Terrasse reservieren."
+        : "¡Hola La Dulce! Me gustaría reservar mesa en la terraza.";
   return `${WA}?text=${encodeURIComponent(text)}`;
 }
 
@@ -207,7 +209,7 @@ function BarraquitoSection({ copy }: { copy: HomeCopy }) {
           <p className="mx-auto mt-5 max-w-xl text-espresso/80">{b.body}</p>
         </Reveal>
         <Reveal className="mt-10 sm:mt-14" delay={150} rotate={1.5}>
-          <Barraquito className="mx-auto w-full max-w-3xl" />
+          <Barraquito className="mx-auto w-full max-w-3xl" locale={copy.locale} />
         </Reveal>
         <Reveal className="mt-8 text-center" delay={250}>
           <p className="font-display text-lg text-espresso/70">{b.caption}</p>
@@ -342,13 +344,24 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
 
 /* --------------------------------- reseñas --------------------------------- */
 
-function Medallion({ ratingAria, caption }: { ratingAria: string; caption: string }) {
+const REVIEWS_WORD: Record<HomeCopy["locale"], string> = {
+  es: "reseñas",
+  en: "reviews",
+  de: "Bewertungen",
+};
+const RATING_LOCALE: Record<HomeCopy["locale"], string> = {
+  es: "es-ES",
+  en: "en-GB",
+  de: "de-DE",
+};
+
+function Medallion({ locale, ratingAria, caption }: { locale: HomeCopy["locale"]; ratingAria: string; caption: string }) {
   const lobes = Array.from({ length: 16 }, (_, i) => {
     const a = (i / 16) * Math.PI * 2;
     return { cx: 110 + Math.cos(a) * 90, cy: 110 + Math.sin(a) * 90 };
   });
   const STAR = "M0 -9 L2.6 -2.8 L9 -2.4 L4 1.8 L5.6 8.4 L0 4.8 L-5.6 8.4 L-4 1.8 L-9 -2.4 L-2.6 -2.8 Z";
-  const ratingText = SITE.rating.value.toLocaleString("es-ES");
+  const ratingText = SITE.rating.value.toLocaleString(RATING_LOCALE[locale]);
   return (
     <svg viewBox="0 0 220 220" className="cut-deep mx-auto w-64 sm:w-72" role="img" aria-label={ratingAria}>
       <g fill="var(--turquesa)">
@@ -365,7 +378,7 @@ function Medallion({ ratingAria, caption }: { ratingAria: string; caption: strin
         ))}
       </g>
       <text x="110" y="162" textAnchor="middle" fontSize="14" fontWeight="600" fontFamily="var(--font-sans), sans-serif" fill="var(--espresso-soft)">
-        {SITE.rating.count} reseñas
+        {SITE.rating.count} {REVIEWS_WORD[locale]}
       </text>
       <text x="110" y="180" textAnchor="middle" fontSize="12" fontFamily="var(--font-sans), sans-serif" fill="var(--espresso-soft)">
         {caption}
@@ -385,7 +398,7 @@ function ReviewsSection({ copy }: { copy: HomeCopy }) {
         <div className="grid items-center gap-12 sm:grid-cols-2">
           <Reveal rotate={3}>
             <div className="-rotate-3">
-              <Medallion ratingAria={r.ratingAria} caption={r.ratingCaption} />
+              <Medallion locale={copy.locale} ratingAria={r.ratingAria} caption={r.ratingCaption} />
             </div>
           </Reveal>
           <div>
@@ -522,7 +535,7 @@ function FaqSection({ copy }: { copy: HomeCopy }) {
 /* ---------------------------------- footer --------------------------------- */
 
 function Footer({ copy }: { copy: HomeCopy }) {
-  const base = copy.locale === "en" ? "/en" : "";
+  const base = copy.locale === "en" ? "/en" : copy.locale === "de" ? "/en" : "";
   return (
     <footer className="bg-espresso px-5 py-12 text-center text-crema">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -555,7 +568,7 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
   return (
     <main>
       <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 py-4 sm:px-8">
-        <a href={copy.locale === "en" ? "/en" : "/"} className="flex items-center gap-2.5">
+        <a href={copy.locale === "es" ? "/" : `/${copy.locale}`} className="flex items-center gap-2.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo/ladulce-badge.jpg" alt="La Dulce — Los Abrigos" className="h-10 w-10 rounded-full object-cover ring-1 ring-espresso/10 sm:h-12 sm:w-12" />
           <span className="font-display text-lg font-semibold text-espresso sm:text-xl">La Dulce</span>
@@ -575,6 +588,13 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
               className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "en" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
             >
               EN
+            </a>
+            <a
+              href="/de"
+              aria-label="Auf Deutsch anzeigen"
+              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "de" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
+            >
+              DE
             </a>
           </div>
           <a

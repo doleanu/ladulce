@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Full menu at La Dulce: brunch, breakfast, burgers, salads, coffee, wine and cocktails. Los Abrigos, Tenerife.",
   alternates: {
     canonical: "/en/carta",
-    languages: { es: "/carta", en: "/en/carta", "x-default": "/carta" },
+    languages: { es: "/carta", en: "/en/carta", de: "/de/carta", "x-default": "/carta" },
   },
 };
 
@@ -51,6 +51,7 @@ export default function CartaPageEn() {
           locale: "en",
           esHref: "/carta",
           enHref: "/en/carta",
+          deHref: "/de/carta",
         }}
       />
     </>

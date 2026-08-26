@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import HomeView from "@/components/HomeView";
-import { HOME_EN } from "@/content/home";
+import { HOME_DE } from "@/content/home";
 import { restaurantJsonLd, faqJsonLd, jsonLdScript } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/en",
+    canonical: "/de",
     languages: { es: "/", en: "/en", de: "/de", "x-default": "/" },
   },
 };
 
-export default function HomePageEn() {
-  const ld = jsonLdScript(restaurantJsonLd(), faqJsonLd(HOME_EN.faq.items));
+export default function HomePageDe() {
+  const ld = jsonLdScript(restaurantJsonLd(), faqJsonLd(HOME_DE.faq.items));
   return (
     <>
       {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
-      <HomeView copy={HOME_EN} />
+      <HomeView copy={HOME_DE} />
     </>
   );
 }

@@ -4,8 +4,6 @@
    registered name, NIF/CIF and any other legal identity before going live.
    --------------------------------------------------------------------------- */
 
-import type { Locale } from "@/content/home";
-
 export type LegalSection = { h?: string; body: string[] };
 export type LegalDoc = {
   slug: "aviso-legal" | "privacidad" | "cookies";
@@ -21,7 +19,9 @@ const ADDR = "Av. los Abrigos, 2, 38618 Los Abrigos, Granadilla de Abona (Santa 
 const EMAIL = "ladulcelosabrigos@gmail.com";
 const PHONE = "922 74 92 19";
 
-export const LEGAL: Record<Locale, Record<LegalDoc["slug"], LegalDoc>> = {
+// German visitors are linked to the English legal pages (see Footer in
+// HomeView) rather than a machine-translated /de legal set — no "de" key here.
+export const LEGAL: Record<"es" | "en", Record<LegalDoc["slug"], LegalDoc>> = {
   es: {
     "aviso-legal": {
       slug: "aviso-legal",

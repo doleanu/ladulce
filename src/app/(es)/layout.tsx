@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: "%s · La Dulce",
   },
   description:
-    "Café, brunch y terraza en Los Abrigos. Barraquito canario, pancakes, Eggs Benedict, smash burger y cheesecake. Abierto todos los días hasta las 22:30. Llama al 922 74 92 19.",
+    "Café, brunch y terraza en Los Abrigos, Tenerife. Barraquito canario, pancakes, Eggs Benedict, smash burger y cheesecake. Abierto de martes a domingo hasta las 22:30. Llama al 922 74 92 19.",
   openGraph: {
     title: "La Dulce — Café & Brunch en Los Abrigos",
     description:
-      "Barraquito, brunch y terraza en Los Abrigos, Tenerife. Abierto todos los días hasta las 22:30.",
+      "Barraquito, brunch y terraza en Los Abrigos, Tenerife. Abierto de martes a domingo hasta las 22:30.",
     locale: "es_ES",
     type: "website",
     siteName: "La Dulce",

@@ -4,7 +4,7 @@
    rating) live in site.ts and are not duplicated here.
    --------------------------------------------------------------------------- */
 
-export type Locale = "es" | "en";
+export type Locale = "es" | "en" | "de";
 
 export type Highlight = { image: string; name: string; note: string; price: string };
 export type Feature = { icon: string; label: string };
@@ -85,6 +85,10 @@ const MARQUEE_EN = [
   "Barraquito", "Pancakes", "Smash Burger", "Eggs Benedict", "Avocado toast",
   "Cheesecake", "Smoothies", "Fresh juice", "Cappuccino", "Croquettes", "Brunch",
 ];
+const MARQUEE_DE = [
+  "Barraquito", "Pancakes", "Smash Burger", "Eggs Benedict", "Avocado-Toast",
+  "Cheesecake", "Smoothies", "Frischer Saft", "Cappuccino", "Kroketten", "Brunch",
+];
 
 export const HOME_ES: HomeCopy = {
   locale: "es",
@@ -108,7 +112,7 @@ export const HOME_ES: HomeCopy = {
     kicker: "Lo que más nos piden",
     title: "Nuestros imprescindibles",
     intro:
-      "Del desayuno tranquilo al brunch de fin de semana. Estos son los platos que más se repiten en las reseñas — la carta completa tiene mucho más.",
+      "Del desayuno tranquilo al brunch de fin de semana, en el sur de Tenerife. Estos son los platos que más se repiten en las reseñas — la carta completa tiene mucho más.",
     items: [
       { image: "/photos/pancake-pistacho.jpg", name: "Pancakes", note: "Esponjosos y dorados, con sirope, fruta o pistacho.", price: "8 €" },
       { image: "/photos/sandwiches.jpg", name: "Club Sandwich", note: "Pollo, beicon, queso, salsa de aguacate y papas.", price: "8,90 €" },
@@ -160,7 +164,7 @@ export const HOME_ES: HomeCopy = {
     kicker: "Lo que se comenta",
     title: "Boca a boca",
     intro: "Lo que se repite, una y otra vez, en las reseñas de Google — en nuestras palabras:",
-    ratingAria: "4,4 sobre 5, con 757 reseñas en Google",
+    ratingAria: "4,4 sobre 5, con 760 reseñas en Google",
     ratingCaption: "en Google",
     strips: [
       { text: "“Desayunos y brunch que enamoran”", tone: 0 },
@@ -206,6 +210,10 @@ export const HOME_ES: HomeCopy = {
         a: "En la Avenida los Abrigos, 2, en Los Abrigos (Granadilla de Abona), al sur de Tenerife, junto al puerto pesquero.",
       },
       {
+        q: "¿Dónde desayunar en Los Abrigos, Tenerife?",
+        a: "En La Dulce, en pleno pueblo de Los Abrigos, junto al puerto pesquero. Servimos desayuno y brunch de martes a domingo, de 8:30 a 22:30, con opciones dulces y saladas y una terraza con vistas al mar.",
+      },
+      {
         q: "¿Hace falta reservar?",
         a: "No es imprescindible, pero en fines de semana y temporada alta recomendamos reservar mesa por WhatsApp para asegurar sitio en la terraza.",
       },
@@ -224,6 +232,10 @@ export const HOME_ES: HomeCopy = {
       {
         q: "¿Qué tipo de comida servís?",
         a: "Café de especialidad, brunch, pancakes, tostas, bagels, hamburguesas, ensaladas y repostería casera. El precio medio es de 10–20 € por persona.",
+      },
+      {
+        q: "¿Tenéis cortado natural y café de especialidad?",
+        a: "Sí. Preparamos cortado natural, café con leche, cappuccino y nuestro barraquito canario tradicional, capa a capa — todo con café de especialidad, recién hecho en la terraza.",
       },
     ],
   },
@@ -258,7 +270,7 @@ export const HOME_EN: HomeCopy = {
     kicker: "What people order most",
     title: "Our must-haves",
     intro:
-      "From a quiet breakfast to weekend brunch. These are the dishes reviewers mention again and again — the full menu has plenty more.",
+      "From a quiet breakfast to weekend brunch, in the south of Tenerife. These are the dishes reviewers mention again and again — the full menu has plenty more.",
     items: [
       { image: "/photos/pancake-pistacho.jpg", name: "Pancakes", note: "Fluffy and golden, with syrup, fruit or pistachio.", price: "€8" },
       { image: "/photos/sandwiches.jpg", name: "Club Sandwich", note: "Chicken, bacon, cheese, avocado sauce and fries.", price: "€8.90" },
@@ -310,7 +322,7 @@ export const HOME_EN: HomeCopy = {
     kicker: "What people say",
     title: "Word of mouth",
     intro: "What comes up, again and again, in the Google reviews — in our words:",
-    ratingAria: "4.4 out of 5, with 757 reviews on Google",
+    ratingAria: "4.4 out of 5, with 760 reviews on Google",
     ratingCaption: "on Google",
     strips: [
       { text: "“Breakfasts and brunch to fall for”", tone: 0 },
@@ -356,6 +368,10 @@ export const HOME_EN: HomeCopy = {
         a: "At Avenida los Abrigos, 2, in Los Abrigos (Granadilla de Abona), southern Tenerife, next to the fishing harbour.",
       },
       {
+        q: "Where can I get breakfast in Los Abrigos, Tenerife?",
+        a: "At La Dulce, right in the village of Los Abrigos, next to the fishing harbour. We serve breakfast and brunch Tuesday to Sunday, 8:30 to 22:30, with sweet and savoury options and a terrace overlooking the sea.",
+      },
+      {
         q: "Do I need to book?",
         a: "It's not essential, but at weekends and in high season we recommend booking a table by WhatsApp to secure a spot on the terrace.",
       },
@@ -375,6 +391,10 @@ export const HOME_EN: HomeCopy = {
         q: "What kind of food do you serve?",
         a: "Specialty coffee, brunch, pancakes, toasts, bagels, burgers, salads and homemade cakes. Average price is €10–20 per person.",
       },
+      {
+        q: "Do you serve natural cortado and specialty coffee?",
+        a: "Yes. We make cortado natural, café con leche, cappuccino and our traditional Canarian barraquito, layer by layer — all with specialty coffee, freshly made on the terrace.",
+      },
     ],
   },
 
@@ -386,4 +406,162 @@ export const HOME_EN: HomeCopy = {
   },
 };
 
-export const HOME: Record<Locale, HomeCopy> = { es: HOME_ES, en: HOME_EN };
+export const HOME_DE: HomeCopy = {
+  locale: "de",
+  langLabel: "English",
+  langHref: "/en",
+  cartaHref: "/de/carta",
+  nav: { carta: "Speisekarte", reservar: "Reservieren" },
+
+  hero: {
+    kicker: "Kaffee · Brunch · Terrasse — Los Abrigos",
+    tagline:
+      "Barraquitos, Pancakes und lange Vormittage am Meer. Dienstag bis Sonntag, 8:30 bis 22:30 Uhr.",
+    ctaMenu: "Zur Speisekarte",
+    ctaReserve: "Tisch reservieren",
+    barraquito: "Den Barraquito entdecken ↓",
+  },
+
+  marquee: MARQUEE_DE,
+
+  destacados: {
+    kicker: "Das wird am meisten bestellt",
+    title: "Unsere Klassiker",
+    intro:
+      "Vom ruhigen Frühstück bis zum Wochenend-Brunch, im Süden von Teneriffa. Das sind die Gerichte, die in den Bewertungen immer wieder erwähnt werden — die vollständige Speisekarte hat noch viel mehr.",
+    items: [
+      { image: "/photos/pancake-pistacho.jpg", name: "Pancakes", note: "Fluffig und goldbraun, mit Sirup, Obst oder Pistazie.", price: "8 €" },
+      { image: "/photos/sandwiches.jpg", name: "Club Sandwich", note: "Hähnchen, Speck, Käse, Avocadosauce und Pommes.", price: "8,90 €" },
+      { image: "/menu/tostas.jpg", name: "Lachs-Tosta", note: "Lachs, Avocado, Rührei und Rucola.", price: "9 €" },
+      { image: "/photos/burger.jpg", name: "Smash Burger", note: "Doppelter Smash, doppelter Cheddar und Hausdressing.", price: "12,90 €" },
+      { image: "/photos/barraquito.jpg", name: "Barraquito", note: "Der klassische kanarische Kaffee, Schicht für Schicht.", price: "2,50 €" },
+      { image: "/menu/tartas.jpg", name: "Cheesecake & Torten", note: "Richtig cremig. Ein weiterer Bewertungs-Favorit.", price: "5 €" },
+    ],
+    cta: "Zur vollständigen Speisekarte →",
+    ctaNote: "Alle Gerichte und Getränke, mit Fotos und Preisen.",
+  },
+
+  barraquito: {
+    kicker: "Die Spezialität des Hauses",
+    title: "Der Barraquito",
+    body:
+      "Der klassische kanarische Kaffee, Schicht für Schicht aufgebaut. Bei La Dulce wird er traditionell serviert: ungerührt, schluckweise von unten nach oben genossen.",
+    caption: "Frisch zubereitet auf der Terrasse bestellen.",
+  },
+
+  terraza: {
+    kicker: "Die Terrasse",
+    title: "Los Abrigos vorbeiziehen sehen",
+    body1:
+      "Eine überdachte Terrasse für lange Frühstücke und entspannte Nachmittage: der beste Ort im Dorf, um bei einem Barraquito das Leben vorbeiziehen zu sehen. Drinnen ein moderner, stilvoller Raum.",
+    body2:
+      "Kleine Gäste sind herzlich willkommen — es ist Platz für den Kinderwagen — und die Portionen sind großzügig, zu einem fairen Preis.",
+  },
+
+  info: {
+    kicker: "Gut zu wissen",
+    title: "Alles, was du wissen musst",
+    hoursLabel: "Öffnungszeiten",
+    hoursValue: "Dienstag bis Sonntag · 8:30 – 22:30 Uhr",
+    hoursNote: "Montags geschlossen",
+    addressLabel: "Wo wir sind",
+    reservarLabel: "Reservierungen",
+    reservarHint: "Schreib uns auf WhatsApp",
+    directions: "Route planen →",
+    features: [
+      { icon: "awning", label: "Überdachte Terrasse" },
+      { icon: "stroller", label: "Ideal mit Kindern" },
+      { icon: "bag", label: "Auch zum Mitnehmen" },
+      { icon: "card", label: "Kartenzahlung möglich" },
+    ],
+  },
+
+  reviews: {
+    kicker: "Das sagen unsere Gäste",
+    title: "Mundpropaganda",
+    intro: "Was in den Google-Bewertungen immer wieder auftaucht — in unseren Worten:",
+    ratingAria: "4,4 von 5, mit 760 Bewertungen auf Google",
+    ratingCaption: "auf Google",
+    strips: [
+      { text: "„Frühstück und Brunch zum Verlieben“", tone: 0 },
+      { text: "„Herzlicher, aufmerksamer Service, top“", tone: 1 },
+      { text: "„Großzügige Portionen, faire Preise“", tone: 2 },
+      { text: "„Ein verstecktes Juwel in Los Abrigos“", tone: 3 },
+      { text: "„Perfekt mit Kindern“", tone: 0 },
+    ],
+  },
+
+  gallery: {
+    kicker: "Ein Einblick",
+    title: "So ist La Dulce",
+    images: [
+      { src: "/photos/brunch.jpg", alt: "Brunch mit Pancakes, Eiern und frischem Obst" },
+      { src: "/photos/guy-eating.jpg", alt: "Gast mit einem Smash Burger auf der Terrasse" },
+      { src: "/photos/interior-bar.jpg", alt: "Innenbereich von La Dulce: Bar und Barhocker" },
+      { src: "/photos/aperol.jpg", alt: "Zwei Aperol Spritz zum Anstoßen" },
+      { src: "/photos/frozen-cocktail.jpg", alt: "Gefrorener Erdbeer-Daiquiri" },
+      { src: "/photos/sandwiches.jpg", alt: "Club Sandwich mit Pommes" },
+      { src: "/photos/salad-plate.jpg", alt: "Caesar-Salat mit Hähnchen" },
+      { src: "/photos/pancakes-mimosa.jpg", alt: "Pancakes mit einem Mimosa-Cocktail" },
+    ],
+  },
+
+  reservar: {
+    kicker: "Reservierungen",
+    title: "Reserviere deinen Tisch",
+    body:
+      "Trage deine Daten ein — WhatsApp öffnet sich mit der fertig geschriebenen Reservierung, du musst sie nur noch senden. Du kannst uns auch direkt unter 615 02 99 41 schreiben.",
+  },
+
+  faq: {
+    kicker: "Häufige Fragen",
+    title: "Bevor du kommst",
+    items: [
+      {
+        q: "Wie sind die Öffnungszeiten von La Dulce?",
+        a: "Wir haben von Dienstag bis Sonntag, 8:30 bis 22:30 Uhr, geöffnet (montags geschlossen). Brunch wird bis 14:00 Uhr serviert, Burger ab 12:00 Uhr.",
+      },
+      {
+        q: "Wo befindet sich La Dulce?",
+        a: "In der Avenida los Abrigos, 2, in Los Abrigos (Granadilla de Abona), im Süden von Teneriffa, direkt am Fischereihafen.",
+      },
+      {
+        q: "Wo bekomme ich Frühstück in Los Abrigos, Teneriffa?",
+        a: "Bei La Dulce, mitten im Dorf Los Abrigos, direkt am Fischereihafen. Wir servieren Frühstück und Brunch von Dienstag bis Sonntag, 8:30 bis 22:30 Uhr, mit süßen und herzhaften Optionen und einer Terrasse mit Meerblick.",
+      },
+      {
+        q: "Muss ich reservieren?",
+        a: "Nicht zwingend, aber an Wochenenden und in der Hochsaison empfehlen wir, per WhatsApp einen Tisch zu reservieren, um einen Platz auf der Terrasse zu sichern.",
+      },
+      {
+        q: "Habt ihr vegane und glutenfreie Optionen?",
+        a: "Ja. Wir bieten den veganen HEÜRA-Burger, Bowls, Salate und Tostas sowie eine glutenfreie Version der Pulga-Brötchen (bitte nach Verfügbarkeit fragen).",
+      },
+      {
+        q: "Ist es ein guter Ort für Kinder?",
+        a: "Auf jeden Fall. Es ist ein familienfreundlicher Ort mit Platz für Kinderwagen und einer überdachten Terrasse.",
+      },
+      {
+        q: "Kann ich etwas zum Mitnehmen bestellen?",
+        a: "Ja, du kannst unter 922 74 92 19 zum Mitnehmen bestellen.",
+      },
+      {
+        q: "Was für Essen serviert ihr?",
+        a: "Kaffeespezialitäten, Brunch, Pancakes, Tostas, Bagels, Burger, Salate und hausgemachtes Gebäck. Der Durchschnittspreis liegt bei 10–20 € pro Person.",
+      },
+      {
+        q: "Habt ihr Cortado natural und Kaffeespezialitäten?",
+        a: "Ja. Wir machen Cortado natural, Café con leche, Cappuccino und unseren traditionellen kanarischen Barraquito, Schicht für Schicht — alles mit Kaffeespezialitäten, frisch zubereitet auf der Terrasse.",
+      },
+    ],
+  },
+
+  footer: {
+    tagline: "Kaffee · Brunch · Terrasse — Los Abrigos, Teneriffa",
+    rights: "Alle Rechte vorbehalten.",
+    webBy: "Website von",
+    legal: { avisoLegal: "Impressum", privacidad: "Datenschutz", cookies: "Cookies" },
+  },
+};
+
+export const HOME: Record<Locale, HomeCopy> = { es: HOME_ES, en: HOME_EN, de: HOME_DE };

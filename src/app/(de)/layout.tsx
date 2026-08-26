@@ -7,16 +7,16 @@ import { metadataBase } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: metadataBase(),
   title: {
-    default: "La Dulce — Café & Brunch in Los Abrigos, Tenerife",
+    default: "La Dulce — Café & Brunch in Los Abrigos, Teneriffa",
     template: "%s · La Dulce",
   },
   description:
-    "Café, brunch and terrace in Los Abrigos, Tenerife. Canarian barraquito, pancakes, Eggs Benedict, smash burger and cheesecake. Open Tuesday to Sunday until 22:30. Call 922 74 92 19.",
+    "Café, Brunch und Terrasse in Los Abrigos, Teneriffa. Kanarischer Barraquito, Pancakes, Eggs Benedict, Smash Burger und Cheesecake. Geöffnet Dienstag bis Sonntag bis 22:30 Uhr. Anrufen unter 922 74 92 19.",
   openGraph: {
     title: "La Dulce — Café & Brunch in Los Abrigos",
     description:
-      "Barraquito, brunch and terrace in Los Abrigos, Tenerife. Open Tuesday to Sunday until 22:30.",
-    locale: "en_GB",
+      "Barraquito, Brunch und Terrasse in Los Abrigos, Teneriffa. Geöffnet Dienstag bis Sonntag bis 22:30 Uhr.",
+    locale: "de_DE",
     type: "website",
     siteName: "La Dulce",
     images: ["/og.jpg"],
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#f6f3ed" };
 
-export default function RootLayoutEn({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayoutDe({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${workSans.variable}`}>
+    <html lang="de" className={`${fraunces.variable} ${workSans.variable}`}>
       <body>
         {children}
-        <ChatWidget locale="en" />
+        <ChatWidget locale="de" />
       </body>
     </html>
   );

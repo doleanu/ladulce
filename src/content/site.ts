@@ -32,7 +32,7 @@ export const SITE = {
   openDays: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
 
   // Reputation (Google, read from the Business Profile)
-  rating: { value: 4.4, count: 757 },
+  rating: { value: 4.4, count: 760 },
   priceRange: "€€", // ~10–20 € per person
 
   // Social profiles (for schema sameAs + footer)

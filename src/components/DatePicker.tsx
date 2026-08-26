@@ -46,11 +46,11 @@ export function DatePicker({
   onChange: (iso: string) => void;
   placeholder: string;
   maxDaysAhead?: number;
-  locale?: "es" | "en";
+  locale?: "es" | "en" | "de";
 }) {
-  const LOCALE = locale === "en" ? "en-GB" : "es-ES";
-  const prevLabel = locale === "en" ? "Previous month" : "Mes anterior";
-  const nextLabel = locale === "en" ? "Next month" : "Mes siguiente";
+  const LOCALE = locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : "es-ES";
+  const prevLabel = locale === "en" ? "Previous month" : locale === "de" ? "Vorheriger Monat" : "Mes anterior";
+  const nextLabel = locale === "en" ? "Next month" : locale === "de" ? "Nächster Monat" : "Mes siguiente";
   const today = startOfDay(new Date());
   const maxDate = new Date(today);
   maxDate.setDate(maxDate.getDate() + maxDaysAhead);

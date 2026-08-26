@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Barraquito from "@/components/Barraquito";
+import { LangSwitcher } from "@/components/LangSwitcher";
 import { ReservationForm } from "@/components/ReservationForm";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { SITE, FULL_ADDRESS } from "@/content/site";
@@ -578,36 +579,15 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
           <span className="font-display text-lg font-semibold text-espresso sm:text-xl">La Dulce</span>
         </a>
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="inline-flex items-center rounded-full border border-espresso/15 bg-crema/85 p-0.5 text-xs font-bold backdrop-blur">
-            <a
-              href="/"
-              aria-label="Cambiar a español"
-              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "es" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-            >
-              ES
-            </a>
-            <a
-              href="/en"
-              aria-label="Switch to English"
-              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "en" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-            >
-              EN
-            </a>
-            <a
-              href="/de"
-              aria-label="Auf Deutsch anzeigen"
-              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "de" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-            >
-              DE
-            </a>
-            <a
-              href="/fr"
-              aria-label="Afficher en français"
-              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "fr" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-            >
-              FR
-            </a>
-          </div>
+          <LangSwitcher
+            locale={copy.locale}
+            options={[
+              { code: "es", label: "Español", href: "/", ariaLabel: "Cambiar a español" },
+              { code: "en", label: "English", href: "/en", ariaLabel: "Switch to English" },
+              { code: "de", label: "Deutsch", href: "/de", ariaLabel: "Auf Deutsch anzeigen" },
+              { code: "fr", label: "Français", href: "/fr", ariaLabel: "Afficher en français" },
+            ]}
+          />
           <a
             href="#reservar"
             className="inline-flex min-w-[8.5rem] items-center justify-center gap-2 rounded-full bg-azul px-4 py-2 text-sm font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"

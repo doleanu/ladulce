@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { Category } from "@/lib/carta-data";
 import { CATEGORY_IMAGES, CATEGORY_IMAGE_POS, DRINK_IDS } from "@/lib/carta-data";
 import { SITE } from "@/content/site";
+import { LangSwitcher } from "@/components/LangSwitcher";
 
 const TEL = `tel:${SITE.tel}`;
 const TEL_DISPLAY = SITE.phoneDisplay;
@@ -139,36 +140,15 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
             La Dulce
           </a>
           <div className="flex items-center gap-3 sm:gap-4">
-            <div className="inline-flex items-center rounded-full border border-espresso/15 bg-crema p-0.5 text-xs font-bold">
-              <a
-                href={copy.esHref}
-                aria-label="Cambiar a español"
-                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "es" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-              >
-                ES
-              </a>
-              <a
-                href={copy.enHref}
-                aria-label="Switch to English"
-                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "en" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-              >
-                EN
-              </a>
-              <a
-                href={copy.deHref}
-                aria-label="Auf Deutsch anzeigen"
-                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "de" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-              >
-                DE
-              </a>
-              <a
-                href={copy.frHref}
-                aria-label="Afficher en français"
-                className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "fr" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
-              >
-                FR
-              </a>
-            </div>
+            <LangSwitcher
+              locale={copy.locale}
+              options={[
+                { code: "es", label: "Español", href: copy.esHref, ariaLabel: "Cambiar a español" },
+                { code: "en", label: "English", href: copy.enHref, ariaLabel: "Switch to English" },
+                { code: "de", label: "Deutsch", href: copy.deHref, ariaLabel: "Auf Deutsch anzeigen" },
+                { code: "fr", label: "Français", href: copy.frHref, ariaLabel: "Afficher en français" },
+              ]}
+            />
             <a href={copy.homeHref} className="text-sm font-semibold text-espresso hover:text-terracota">
               {copy.back}
             </a>

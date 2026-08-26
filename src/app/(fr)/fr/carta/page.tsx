@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import { CartaView } from "@/components/CartaView";
-import { CARTA_EN } from "@/lib/carta-data";
+import { CARTA_FR } from "@/lib/carta-data";
 import { FULL_ADDRESS } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Menu",
+  title: "Carte",
   description:
-    "Full menu at La Dulce: brunch, breakfast, burgers, salads, coffee, wine and cocktails. Los Abrigos, Tenerife.",
+    "La carte complète de La Dulce : brunch, petit-déjeuner, burgers, salades, café, vin et cocktails. Los Abrigos, Tenerife.",
   alternates: {
-    canonical: "/en/carta",
+    canonical: "/fr/carta",
     languages: { es: "/carta", en: "/en/carta", de: "/de/carta", fr: "/fr/carta", "x-default": "/carta" },
   },
 };
 
-export default function CartaPageEn() {
+export default function CartaPageFr() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Menu",
-    name: "La Dulce Menu",
-    inLanguage: "en",
-    hasMenuSection: CARTA_EN.map((cat) => ({
+    name: "La Dulce Carte",
+    inLanguage: "fr",
+    hasMenuSection: CARTA_FR.map((cat) => ({
       "@type": "MenuSection",
       name: cat.title,
       hasMenuItem: cat.dishes.map((d) => ({ "@type": "MenuItem", name: d.name })),
@@ -31,24 +31,24 @@ export default function CartaPageEn() {
       {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CartaView
-        carta={CARTA_EN}
+        carta={CARTA_FR}
         copy={{
-          homeHref: "/en",
-          coverWord: "MENU",
-          coverLang: "English",
-          kicker: "Digital menu",
-          title: "Our menu",
-          intro: "Brunch, specialty coffee and cocktails in Los Abrigos.",
-          food: "Food",
-          drinks: "Drinks",
-          call: "Call",
-          directions: "Get directions",
-          footnote: "Prices may vary. Please check the in-house menu for the definitive version.",
+          homeHref: "/fr",
+          coverWord: "CARTE",
+          coverLang: "Français",
+          kicker: "Carte digitale",
+          title: "Notre carte",
+          intro: "Brunch, café de spécialité et cocktails à Los Abrigos.",
+          food: "Cuisine",
+          drinks: "Boissons",
+          call: "Appeler",
+          directions: "Itinéraire",
+          footnote: "Les prix peuvent varier. Consultez la carte sur place pour la version définitive.",
           footerAddress: FULL_ADDRESS,
           demoNote: "",
-          webBy: "Website by",
-          back: "← Back home",
-          locale: "en",
+          webBy: "Site web par",
+          back: "← Retour à l'accueil",
+          locale: "fr",
           esHref: "/carta",
           enHref: "/en/carta",
           deHref: "/de/carta",

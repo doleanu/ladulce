@@ -20,13 +20,15 @@ import {
 
 const WA = `https://wa.me/${SITE.whatsapp}`;
 
-function waReserva(locale: "es" | "en" | "de") {
+function waReserva(locale: "es" | "en" | "de" | "fr") {
   const text =
     locale === "en"
       ? "Hi La Dulce! I'd like to book a table on the terrace."
       : locale === "de"
         ? "Hallo La Dulce! Ich möchte gerne einen Tisch auf der Terrasse reservieren."
-        : "¡Hola La Dulce! Me gustaría reservar mesa en la terraza.";
+        : locale === "fr"
+          ? "Bonjour La Dulce ! J'aimerais réserver une table en terrasse."
+          : "¡Hola La Dulce! Me gustaría reservar mesa en la terraza.";
   return `${WA}?text=${encodeURIComponent(text)}`;
 }
 
@@ -348,11 +350,13 @@ const REVIEWS_WORD: Record<HomeCopy["locale"], string> = {
   es: "reseñas",
   en: "reviews",
   de: "Bewertungen",
+  fr: "avis",
 };
 const RATING_LOCALE: Record<HomeCopy["locale"], string> = {
   es: "es-ES",
   en: "en-GB",
   de: "de-DE",
+  fr: "fr-FR",
 };
 
 function Medallion({ locale, ratingAria, caption }: { locale: HomeCopy["locale"]; ratingAria: string; caption: string }) {
@@ -535,7 +539,7 @@ function FaqSection({ copy }: { copy: HomeCopy }) {
 /* ---------------------------------- footer --------------------------------- */
 
 function Footer({ copy }: { copy: HomeCopy }) {
-  const base = copy.locale === "en" ? "/en" : copy.locale === "de" ? "/en" : "";
+  const base = copy.locale === "en" ? "/en" : copy.locale === "de" || copy.locale === "fr" ? "/en" : "";
   return (
     <footer className="bg-espresso px-5 py-12 text-center text-crema">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -595,6 +599,13 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
               className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "de" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
             >
               DE
+            </a>
+            <a
+              href="/fr"
+              aria-label="Afficher en français"
+              className={`rounded-full px-3 py-1 transition-colors ${copy.locale === "fr" ? "bg-terracota text-crema" : "text-espresso/55 hover:text-espresso"}`}
+            >
+              FR
             </a>
           </div>
           <a

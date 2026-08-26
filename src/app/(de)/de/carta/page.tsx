@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Die komplette Speisekarte von La Dulce: Brunch, Frühstück, Burger, Salate, Kaffee, Wein und Cocktails. Los Abrigos, Teneriffa.",
   alternates: {
     canonical: "/de/carta",
-    languages: { es: "/carta", en: "/en/carta", de: "/de/carta", "x-default": "/carta" },
+    languages: { es: "/carta", en: "/en/carta", de: "/de/carta", fr: "/fr/carta", "x-default": "/carta" },
   },
 };
 
@@ -52,6 +52,7 @@ export default function CartaPageDe() {
           esHref: "/carta",
           enHref: "/en/carta",
           deHref: "/de/carta",
+          frHref: "/fr/carta",
         }}
       />
     </>

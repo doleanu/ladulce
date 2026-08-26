@@ -6,7 +6,7 @@
 
 import { SITE, FULL_ADDRESS } from "@/content/site";
 
-export type Locale = "es" | "en" | "de";
+export type Locale = "es" | "en" | "de" | "fr";
 export type Cta = { label: string; href: string };
 export type Dish = { name: string; price: string };
 
@@ -31,6 +31,7 @@ function menuText(intro: string, dishes: Dish[]) {
 const RATING_ES = `${SITE.rating.value.toLocaleString("es-ES")} sobre 5, con ${SITE.rating.count} reseñas en Google`;
 const RATING_EN = `${SITE.rating.value.toLocaleString("en-GB")} out of 5, with ${SITE.rating.count} Google reviews`;
 const RATING_DE = `${SITE.rating.value.toLocaleString("de-DE")} von 5, mit ${SITE.rating.count} Google-Bewertungen`;
+const RATING_FR = `${SITE.rating.value.toLocaleString("fr-FR")} sur 5, avec ${SITE.rating.count} avis Google`;
 
 const SIGNATURE_ES: Dish[] = [
   { name: "Barraquito", price: "2,50 €" },
@@ -54,6 +55,14 @@ const SIGNATURE_DE: Dish[] = [
   { name: "Eggs Benedict", price: "9,50 €" },
   { name: "Smash Burger", price: "12,90 €" },
   { name: "Avocado-Toast", price: "7,60 €" },
+  { name: "Cheesecake", price: "5 €" },
+];
+const SIGNATURE_FR: Dish[] = [
+  { name: "Barraquito", price: "2,50 €" },
+  { name: "Pancakes", price: "8 €" },
+  { name: "Eggs Benedict", price: "9,50 €" },
+  { name: "Smash Burger", price: "12,90 €" },
+  { name: "Toast à l'avocat", price: "7,60 €" },
   { name: "Cheesecake", price: "5 €" },
 ];
 
@@ -162,8 +171,43 @@ const DE: typeof ES = {
   },
 };
 
+const FR: typeof ES = {
+  cartaHref: "/fr/carta",
+  whatsappLink: waReserve("Bonjour La Dulce ! J'aimerais réserver une table."),
+  rating: RATING_FR,
+  signature: SIGNATURE_FR,
+  orderKindOptions: ["À emporter", "Sur place"],
+  orderWhenOptions: ["Maintenant", "Dans 30 min", "Plus tard"],
+  quickReplies: { hours: "Horaires", menu: "Voir la carte", reserve: "Réserver une table", order: "Commander à emporter", location: "Itinéraire" },
+  copy: {
+    greeting: `Bonjour ! Je suis l'assistant de ${business.name} 👋 Je peux vous aider avec les horaires, la carte, réserver une table ou l'itinéraire. Que puis-je faire pour vous ?`,
+    greetingReply: "Vous souhaitez connaître les horaires, voir la carte, réserver une table ou l'itinéraire ?",
+    unknownReply: "Je ne suis pas sûr d'avoir compris, mais je peux vous aider avec ceci :",
+    hours: "Du mardi au dimanche, de 8h30 à 22h30 (fermé le lundi). Le brunch est servi jusqu'à 14h00. Je vous montre la carte, ou vous préférez réserver une table ?",
+    menuIntro: "Quelques-uns de nos favoris :",
+    menuTail: "Voici la carte complète 👇",
+    menuCta: "Voir la carte complète",
+    reserve: `Parfait ! Nous prenons les réservations par WhatsApp, au ${business.whatsapp}. Nous répondons tout de suite — appuyez sur le bouton.`,
+    location: `Nous sommes à ${business.address}. Du mardi au dimanche, de 8h30 à 22h30. Je vous aide à réserver une table ?`,
+    orderStart: "Parfait ! À emporter ou sur place ?",
+    askWhen: (kind: string) => `Parfait, ${kind.toLowerCase()}. Pour quand le souhaitez-vous ?`,
+    askName: "Dernière chose — à quel nom je le note ?",
+    confirm: (name: string, kind: string, when: string) =>
+      `C'est noté, ${name} ! J'ai enregistré : ${kind.toLowerCase()}, ${when.toLowerCase()}. Pour confirmer, appelez La Dulce — ce sera prêt à temps.`,
+    callCta: `Appeler · ${business.phone}`,
+    waCta: "Réserver sur WhatsApp",
+    mapsCta: "Itinéraire",
+    inputPlaceholder: "Écrivez votre question…",
+    sendLabel: "Envoyer",
+    openLabel: "Ouvrir l'assistant",
+    closeLabel: "Fermer l'assistant",
+    headerTitle: `Assistant ${business.name}`,
+    headerStatus: "Répond instantanément",
+  },
+};
+
 export function getChat(locale: Locale) {
-  const c = locale === "en" ? EN : locale === "de" ? DE : ES;
+  const c = locale === "en" ? EN : locale === "de" ? DE : locale === "fr" ? FR : ES;
   return {
     business,
     cartaHref: c.cartaHref,
@@ -180,12 +224,12 @@ export function getChat(locale: Locale) {
 export type Intent = "hours" | "menu" | "reserve" | "order" | "location" | "greeting" | "unknown";
 
 const INTENT_PATTERNS: Record<Exclude<Intent, "unknown">, RegExp> = {
-  greeting: /hola|buenas|hey|qué tal|que tal|hello|\bhi\b|good morning|hallo|guten tag|servus|moin/i,
-  hours: /hora|horario|abiert|cerrad|lunes|hour|open|clos|öffnungszeit|geöffnet|geschlossen|montag/i,
+  greeting: /hola|buenas|hey|qué tal|que tal|hello|\bhi\b|good morning|hallo|guten tag|servus|moin|bonjour|salut|coucou/i,
+  hours: /hora|horario|abiert|cerrad|lunes|hour|open|clos|öffnungszeit|geöffnet|geschlossen|montag|horaire|ouvert|ferm|lundi/i,
   reserve: /reserv|mesa|booking|book|table|tisch/i,
-  order: /pedid|pedir|encarg|llevar|domicilio|take ?away|order|to go|mitnehmen|bestell|abholen/i,
-  menu: /carta|men[uú]|comida|desayun|brunch|barraquito|pancake|precio|menu|food|dish|price|speisekarte|essen|frühstück|preis/i,
-  location: /d[oó]nde|ubicaci|direcci|llegar|maps|avenida|where|address|direction|location|wo\b|adresse|anfahrt|route/i,
+  order: /pedid|pedir|encarg|llevar|domicilio|take ?away|order|to go|mitnehmen|bestell|abholen|command|emporter|livraison/i,
+  menu: /carta|men[uú]|comida|desayun|brunch|barraquito|pancake|precio|menu|food|dish|price|speisekarte|essen|frühstück|preis|carte|repas|petit.d[ée]jeuner|prix/i,
+  location: /d[oó]nde|ubicaci|direcci|llegar|maps|avenida|where|address|direction|location|wo\b|adresse|anfahrt|route|où\b|itin[ée]raire|adresse/i,
 };
 
 export function matchIntent(raw: string): Intent {

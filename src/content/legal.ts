@@ -19,8 +19,9 @@ const ADDR = "Av. los Abrigos, 2, 38618 Los Abrigos, Granadilla de Abona (Santa 
 const EMAIL = "ladulcelosabrigos@gmail.com";
 const PHONE = "922 74 92 19";
 
-// German visitors are linked to the English legal pages (see Footer in
-// HomeView) rather than a machine-translated /de legal set — no "de" key here.
+// German and French visitors are linked to the English legal pages (see Footer
+// in HomeView) rather than machine-translated /de or /fr legal sets — no "de"
+// or "fr" key here.
 export const LEGAL: Record<"es" | "en", Record<LegalDoc["slug"], LegalDoc>> = {
   es: {
     "aviso-legal": {

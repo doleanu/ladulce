@@ -91,12 +91,13 @@ function Leader({ d }: { d: string }) {
   );
 }
 
-type BarraquitoLocale = "es" | "en" | "de";
+type BarraquitoLocale = "es" | "en" | "de" | "fr";
 
 const ARIA_LABEL: Record<BarraquitoLocale, string> = {
   es: "Diagrama de las capas de un barraquito: leche condensada, Licor 43, café espresso, leche caliente, espuma, canela y corteza de limón",
   en: "Diagram of a barraquito's layers: condensed milk, Licor 43, espresso coffee, hot milk, milk foam, cinnamon and lemon peel",
   de: "Diagramm der Schichten eines Barraquito: Kondensmilch, Licor 43, Espresso-Kaffee, heiße Milch, Milchschaum, Zimt und Zitronenschale",
+  fr: "Diagramme des couches d'un barraquito : lait concentré, Licor 43, café espresso, lait chaud, mousse de lait, cannelle et zeste de citron",
 };
 
 const LABELS: Record<
@@ -133,6 +134,14 @@ const LABELS: Record<
     canela: ["Zimt & Zitrone", "das Aroma, das alles abrundet"],
     caliente: ["Heiße Milch", "sanft, ohne Eile"],
     licor: ["Licor 43", "die kanarische Note"],
+  },
+  fr: {
+    espuma: ["Mousse de lait", "la couronne, toujours généreuse"],
+    cafe: ["Café espresso", "le cœur du verre"],
+    condensada: ["Lait concentré", "la base sucrée"],
+    canela: ["Cannelle et citron", "l'arôme qui parachève"],
+    caliente: ["Lait chaud", "doux, sans se presser"],
+    licor: ["Licor 43", "la touche canarienne"],
   },
 };
 

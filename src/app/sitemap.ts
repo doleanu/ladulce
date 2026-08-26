@@ -14,12 +14,19 @@ const PATHS = [
   "/en/cookies",
   "/de",
   "/de/carta",
+  "/fr",
+  "/fr/carta",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.map((path) => ({
     url: `${SITE.url}${path}`,
     changeFrequency: "monthly",
-    priority: path === "" ? 1 : path === "/carta" || path === "/en/carta" || path === "/de/carta" ? 0.9 : 0.5,
+    priority:
+      path === ""
+        ? 1
+        : path === "/carta" || path === "/en/carta" || path === "/de/carta" || path === "/fr/carta"
+          ? 0.9
+          : 0.5,
   }));
 }

@@ -6,7 +6,7 @@ import { restaurantJsonLd, faqJsonLd, jsonLdScript } from "@/lib/jsonld";
 export const metadata: Metadata = {
   alternates: {
     canonical: "/de",
-    languages: { es: "/", en: "/en", de: "/de", "x-default": "/" },
+    languages: { es: "/", en: "/en", de: "/de", fr: "/fr", "x-default": "/" },
   },
 };
 

@@ -15,7 +15,7 @@ const TIME_SLOTS = Array.from({ length: 26 }, (_, i) => {
   return `${h}:${m}`;
 });
 
-type Locale = "es" | "en" | "de";
+type Locale = "es" | "en" | "de" | "fr";
 
 const T = {
   es: {
@@ -57,6 +57,19 @@ const T = {
     submit: "Per WhatsApp reservieren",
     note: "Beim Senden öffnet sich WhatsApp mit deiner fertig geschriebenen Reservierung — du musst sie nur noch bestätigen.",
   },
+  fr: {
+    name: "Nom",
+    namePlaceholder: "Comment vous appelez-vous ?",
+    date: "Date",
+    datePlaceholder: "Choisissez un jour",
+    time: "Heure",
+    timePlaceholder: "Choisissez une heure",
+    people: "Personnes",
+    extra: "Autre chose à nous signaler ? (optionnel)",
+    extraPlaceholder: "Allergies, chaise haute…",
+    submit: "Réserver sur WhatsApp",
+    note: "En envoyant, WhatsApp s'ouvre avec votre réservation déjà rédigée — il ne vous reste qu'à la confirmer.",
+  },
 } as const;
 
 function formatDate(iso: string, locale: Locale) {
@@ -83,6 +96,15 @@ function buildMessage(
     const lines = [
       `Hallo La Dulce! Ich bin ${name || "—"}.`,
       `Ich möchte gerne einen Tisch auf der Terrasse für ${peopleText}${date ? ` am ${formatDate(date, locale)}` : ""}${time ? ` um ${time} Uhr` : ""} reservieren.`,
+    ];
+    if (message.trim()) lines.push(message.trim());
+    return lines.join(" ");
+  }
+  if (locale === "fr") {
+    const peopleText = people === "9+" ? "un groupe de 9 personnes ou plus" : `${people} ${people === "1" ? "personne" : "personnes"}`;
+    const lines = [
+      `Bonjour La Dulce ! Je suis ${name || "—"}.`,
+      `J'aimerais réserver une table en terrasse pour ${peopleText}${date ? ` le ${formatDate(date, locale)}` : ""}${time ? ` à ${time}` : ""}.`,
     ];
     if (message.trim()) lines.push(message.trim());
     return lines.join(" ");

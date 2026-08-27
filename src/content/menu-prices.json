@@ -1,0 +1,1748 @@
+{
+  "brunch": [
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        14.95
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        32
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "desayunos": [
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        9.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        9.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "pancakes": [
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "tostas": [
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3,
+        3.5
+      ],
+      "sep": "–",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.7,
+        3
+      ],
+      "sep": "–",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        9.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8,
+        9
+      ],
+      "sep": "–",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        9.2
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "croissants": [
+    {
+      "amounts": [
+        3.3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "bagels": [
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "bocadillos": [
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.9
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "pulgas": [
+    {
+      "amounts": [
+        3.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [],
+      "sep": null,
+      "freeText": "Consultar"
+    }
+  ],
+  "sandwiches": [
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8.9
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "bowls": [
+    {
+      "amounts": [
+        7.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        11.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "burgers": [
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        15.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        11.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        13.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        13.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        13.9
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "ensaladas": [
+    {
+      "amounts": [
+        10.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        11.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        10.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "platos": [
+    {
+      "amounts": [
+        9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        11.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "picoteo": [
+    {
+      "amounts": [
+        11
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        12
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        15
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "papas": [
+    {
+      "amounts": [
+        3.7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.9
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "postres": [
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "zumos": [
+    {
+      "amounts": [
+        2.3,
+        3.9
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5,
+        4.5,
+        5
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        0.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "batidos": [
+    {
+      "amounts": [
+        3.8,
+        4.8,
+        5.8
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        0.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        0.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "cafe": [
+    {
+      "amounts": [
+        1.15
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3,
+        3.5,
+        3.5
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "refrescos": [
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5,
+        2.2
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.2,
+        2.2
+      ],
+      "sep": "/",
+      "freeText": null
+    }
+  ],
+  "cerveza": [
+    {
+      "amounts": [
+        3.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.5,
+        3
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8,
+        3.6
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8,
+        3.6
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        1.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.1
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.2
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "vino": [
+    {
+      "amounts": [
+        4.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.8,
+        14
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5,
+        18
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        2.8,
+        14
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5,
+        18
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        8,
+        15
+      ],
+      "sep": "/",
+      "freeText": null
+    }
+  ],
+  "sidra": [
+    {
+      "amounts": [
+        2.5,
+        5
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "cocteles": [
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5,
+        7
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        6.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "vodka": [
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "licores": [
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "vermut": [
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "gin": [
+    {
+      "amounts": [
+        4.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.6
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        7.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "ron": [
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.8
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "tequila": [
+    {
+      "amounts": [
+        3.5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "brandy": [
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3.2
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "chupitos": [
+    {
+      "amounts": [
+        2,
+        2.5
+      ],
+      "sep": "/",
+      "freeText": null
+    },
+    {
+      "amounts": [
+        3
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ],
+  "whisky": [
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        4.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5
+      ],
+      "sep": null,
+      "freeText": null
+    }
+  ]
+}

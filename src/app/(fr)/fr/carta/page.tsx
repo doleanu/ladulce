@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { CartaView } from "@/components/CartaView";
-import { CARTA_FR } from "@/lib/carta-data";
+import { CARTA_FR, withCanonicalPrices } from "@/lib/carta-data";
 import { FULL_ADDRESS } from "@/content/site";
+import menuPrices from "@/content/menu-prices.json";
 
 export const metadata: Metadata = {
   title: "Carte",
@@ -14,12 +15,13 @@ export const metadata: Metadata = {
 };
 
 export default function CartaPageFr() {
+  const carta = withCanonicalPrices(CARTA_FR, "fr", menuPrices);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Menu",
     name: "La Dulce Carte",
     inLanguage: "fr",
-    hasMenuSection: CARTA_FR.map((cat) => ({
+    hasMenuSection: carta.map((cat) => ({
       "@type": "MenuSection",
       name: cat.title,
       hasMenuItem: cat.dishes.map((d) => ({ "@type": "MenuItem", name: d.name })),
@@ -31,7 +33,7 @@ export default function CartaPageFr() {
       {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CartaView
-        carta={CARTA_FR}
+        carta={carta}
         copy={{
           homeHref: "/fr",
           coverWord: "CARTE",

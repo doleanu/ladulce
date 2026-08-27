@@ -13,6 +13,48 @@ export type Category = {
   dishes: Dish[];
 };
 
+/* --------------------------- precios canónicos ---------------------------
+   El precio real de cada plato vive en src/content/menu-prices.json (un solo
+   número o rango, independiente del idioma) — es lo que edita el panel de
+   admin. Las cuatro listas ES/EN/DE/FR de más abajo siguen llevando un precio
+   ya escrito como texto (de cuando se tradujo la carta a mano): sirve de
+   copia de seguridad y de referencia de formato, pero withCanonicalPrices()
+   lo sustituye por el valor del JSON, formateado para cada idioma, en cuanto
+   ese plato tiene una entrada numérica allí. Los precios en texto libre
+   ("Consultar" / "Ask us" / …) no están en el JSON y se quedan tal cual. */
+
+type CanonicalPrice = { amounts: number[]; sep: string | null; freeText: string | null };
+
+function formatAmount(n: number, locale: string): string {
+  const fixed = n.toFixed(2);
+  return locale === "en" ? `€${fixed}` : `${fixed.replace(".", ",")} €`;
+}
+
+function formatCanonicalPrice(entry: CanonicalPrice, locale: string): string | null {
+  if (entry.freeText !== null || entry.amounts.length === 0) return null;
+  if (entry.amounts.length === 1) return formatAmount(entry.amounts[0], locale);
+  const sep = entry.sep === "–" ? " – " : " / ";
+  return entry.amounts.map((a) => formatAmount(a, locale)).join(sep);
+}
+
+export function withCanonicalPrices(
+  categories: Category[],
+  locale: "es" | "en" | "de" | "fr",
+  prices: Record<string, CanonicalPrice[]>
+): Category[] {
+  return categories.map((cat) => {
+    const catPrices = prices[cat.id];
+    if (!catPrices) return cat;
+    return {
+      ...cat,
+      dishes: cat.dishes.map((dish, i) => {
+        const formatted = catPrices[i] ? formatCanonicalPrice(catPrices[i], locale) : null;
+        return formatted ? { ...dish, price: formatted } : dish;
+      }),
+    };
+  });
+}
+
 // IDs de las categorías de bebidas — el resto se considera comida. Se usa para
 // separar la carta en dos menús (Comida / Bebidas) en CartaView.
 export const DRINK_IDS = [

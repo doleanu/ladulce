@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { CartaView } from "@/components/CartaView";
 import { CARTA_FR, withCanonicalPrices } from "@/lib/carta-data";
 import { FULL_ADDRESS } from "@/content/site";
-import menuPrices from "@/content/menu-prices.json";
+import { getMenuPrices } from "@/lib/menuPrices";
+
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Carte",
@@ -14,7 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CartaPageFr() {
+export default async function CartaPageFr() {
+  const menuPrices = await getMenuPrices();
   const carta = withCanonicalPrices(CARTA_FR, "fr", menuPrices);
   const jsonLd = {
     "@context": "https://schema.org",

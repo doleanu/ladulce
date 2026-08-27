@@ -25,7 +25,9 @@ export async function POST(req: Request) {
     httpOnly: true,
     secure: true,
     sameSite: "lax",
-    path: "/admin",
+    // "/" (not "/admin") — the session cookie also has to reach
+    // /api/admin/menu-prices, which isn't under the /admin path prefix.
+    path: "/",
     maxAge,
   });
 

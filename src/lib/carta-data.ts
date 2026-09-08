@@ -221,6 +221,8 @@ export const CARTA_ES: Category[] = [
       { name: "Pollo", price: "5,10 €", note: "Pollo, queso, lechuga, tomate y mayonesa." },
       { name: "Pollo desmenuzado", price: "5,10 €", note: "Lechuga, tomate, mayonesa y queso." },
       { name: "El Francés", price: "4,90 €", note: "Tortilla francesa." },
+      { name: "Jamón serrano con tumaca", price: "5,50 €", note: "Jamón serrano y tumaca." },
+      { name: "Queso blanco con tomate", price: "5,50 €", note: "Queso blanco y tomate." },
     ],
   },
   {
@@ -668,6 +670,8 @@ export const CARTA_EN: Category[] = [
       { name: "Chicken", price: "€5.10", note: "Chicken, cheese, lettuce, tomato and mayo." },
       { name: "Shredded chicken", price: "€5.10", note: "Lettuce, tomato, mayo and cheese." },
       { name: "El Francés", price: "€4.90", note: "French omelette." },
+      { name: "Serrano ham with tumaca", price: "€5.50", note: "Serrano ham and tumaca." },
+      { name: "White cheese with tomato", price: "€5.50", note: "White cheese and tomato." },
     ],
   },
   {
@@ -1115,6 +1119,8 @@ export const CARTA_DE: Category[] = [
       { name: "Hähnchen", price: "5,10 €", note: "Hähnchen, Käse, Salat, Tomate und Mayonnaise." },
       { name: "Hähnchen, geschreddert", price: "5,10 €", note: "Salat, Tomate, Mayonnaise und Käse." },
       { name: "El Francés", price: "4,90 €", note: "Omelett." },
+      { name: "Serrano-Schinken mit Tumaca", price: "5,50 €", note: "Serrano-Schinken und Tumaca." },
+      { name: "Weißkäse mit Tomate", price: "5,50 €", note: "Weißkäse und Tomate." },
     ],
   },
   {
@@ -1562,6 +1568,8 @@ export const CARTA_FR: Category[] = [
       { name: "Poulet", price: "5,10 €", note: "Poulet, fromage, laitue, tomate et mayonnaise." },
       { name: "Poulet effiloché", price: "5,10 €", note: "Laitue, tomate, mayonnaise et fromage." },
       { name: "El Francés", price: "4,90 €", note: "Omelette nature." },
+      { name: "Jambon serrano et tumaca", price: "5,50 €", note: "Jambon serrano et tumaca." },
+      { name: "Fromage blanc et tomate", price: "5,50 €", note: "Fromage blanc et tomate." },
     ],
   },
   {

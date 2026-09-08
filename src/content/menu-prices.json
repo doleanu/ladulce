@@ -186,7 +186,7 @@
         3,
         3.5
       ],
-      "sep": "–",
+      "sep": "\u2013",
       "freeText": null
     },
     {
@@ -194,7 +194,7 @@
         2.7,
         3
       ],
-      "sep": "–",
+      "sep": "\u2013",
       "freeText": null
     },
     {
@@ -216,7 +216,7 @@
         8,
         9
       ],
-      "sep": "–",
+      "sep": "\u2013",
       "freeText": null
     },
     {
@@ -389,6 +389,20 @@
     {
       "amounts": [
         4.9
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
+      ],
+      "sep": null,
+      "freeText": null
+    },
+    {
+      "amounts": [
+        5.5
       ],
       "sep": null,
       "freeText": null

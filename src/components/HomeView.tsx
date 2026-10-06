@@ -21,6 +21,14 @@ import {
 
 const WA = `https://wa.me/${SITE.whatsapp}`;
 
+function PhoneIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" />
+    </svg>
+  );
+}
+
 function waReserva(locale: "es" | "en" | "de" | "fr") {
   const text =
     locale === "en"
@@ -325,6 +333,14 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
                 {SITE.whatsappDisplay}
               </a>
               <span className="mt-0.5 block text-xs text-espresso/50">{info.reservarHint}</span>
+              <a
+                href={`tel:${SITE.tel}`}
+                aria-label={`Tel. ${SITE.phoneDisplay}`}
+                className="mt-3 inline-flex items-center gap-2 font-display text-2xl font-semibold text-espresso hover:text-terracota"
+              >
+                <PhoneIcon className="h-6 w-6 text-azul" />
+                {SITE.phoneDisplay}
+              </a>
             </div>
           </Reveal>
           <Reveal delay={120} rotate={1.5}>
@@ -490,6 +506,10 @@ function ReservarSection({ copy }: { copy: HomeCopy }) {
               <a href={waReserva(copy.locale)} target="_blank" rel="noopener noreferrer" className="paper-card inline-flex items-center gap-2 bg-azul px-7 py-3.5 font-semibold text-crema" style={{ "--r": "-1.5deg" } as CSSProperties}>
                 <WhatsAppIcon className="h-5 w-5" />
                 {SITE.whatsappDisplay}
+              </a>
+              <a href={`tel:${SITE.tel}`} aria-label={`Tel. ${SITE.phoneDisplay}`} className="paper-card inline-flex items-center gap-2 bg-crema px-7 py-3.5 font-semibold text-espresso" style={{ "--r": "-1deg" } as CSSProperties}>
+                <PhoneIcon className="h-5 w-5" />
+                {SITE.phoneDisplay}
               </a>
               <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="paper-card inline-block bg-turquesa px-7 py-3.5 font-semibold text-espresso" style={{ "--r": "1.5deg" } as CSSProperties}>
                 {copy.info.directions}

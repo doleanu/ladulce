@@ -7,7 +7,7 @@ import { getMenuPrices } from "@/lib/menuPrices";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Speisekarte",
+  title: "Speisekarte: Frühstück & Brunch in Los Abrigos",
   description:
     "Die komplette Speisekarte von La Dulce: Brunch, Frühstück, Burger, Salate, Kaffee, Wein und Cocktails. Los Abrigos, Teneriffa.",
   alternates: {

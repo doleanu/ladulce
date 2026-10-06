@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     canonical: "/de",
     languages: { es: "/", en: "/en", de: "/de", fr: "/fr", "x-default": "/" },
   },
+  openGraph: { url: "/de" },
 };
 
 export default function HomePageDe() {

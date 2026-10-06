@@ -5,6 +5,7 @@ import { LEGAL } from "@/content/legal";
 export const metadata: Metadata = {
   title: "Privacy policy",
   alternates: { canonical: "/en/privacidad", languages: { es: "/privacidad", en: "/en/privacidad" } },
+  openGraph: { url: "/en/privacidad" },
 };
 
 export default function Page() {

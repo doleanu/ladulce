@@ -1,4 +1,5 @@
 import { SITE } from "@/content/site";
+import type { Category, CanonicalPrice } from "./carta-data";
 
 export function restaurantJsonLd() {
   return {
@@ -38,6 +39,41 @@ export function restaurantJsonLd() {
       reviewCount: SITE.rating.count,
     },
     sameAs: [SITE.instagram, SITE.facebook],
+  };
+}
+
+/**
+ * Full Menu/MenuSection/MenuItem structured data, with a schema.org Offer
+ * (numeric price in EUR) on each item that has exactly one canonical price.
+ * Dishes with a range ("5,50 € / 6,00 €") or free text ("Consultar") are
+ * listed without an offer — schema.org expects one clean price per Offer.
+ */
+export function menuJsonLd(name: string, locale: string, carta: Category[], prices: Record<string, CanonicalPrice[]>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    name,
+    inLanguage: locale,
+    hasMenuSection: carta.map((cat) => {
+      const catPrices = prices[cat.id];
+      return {
+        "@type": "MenuSection",
+        name: cat.title,
+        hasMenuItem: cat.dishes.map((d, i) => {
+          const cp = catPrices?.[i];
+          const offers =
+            cp && cp.freeText === null && cp.amounts.length === 1
+              ? { "@type": "Offer", price: cp.amounts[0].toFixed(2), priceCurrency: "EUR" }
+              : undefined;
+          return {
+            "@type": "MenuItem",
+            name: d.name,
+            ...(d.note ? { description: d.note } : {}),
+            ...(offers ? { offers } : {}),
+          };
+        }),
+      };
+    }),
   };
 }
 

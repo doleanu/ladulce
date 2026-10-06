@@ -5,6 +5,7 @@ import { LEGAL } from "@/content/legal";
 export const metadata: Metadata = {
   title: "Política de cookies",
   alternates: { canonical: "/cookies", languages: { es: "/cookies", en: "/en/cookies" } },
+  openGraph: { url: "/cookies" },
 };
 
 export default function Page() {

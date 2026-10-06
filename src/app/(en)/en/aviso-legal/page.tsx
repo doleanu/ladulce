@@ -5,6 +5,7 @@ import { LEGAL } from "@/content/legal";
 export const metadata: Metadata = {
   title: "Legal notice",
   alternates: { canonical: "/en/aviso-legal", languages: { es: "/aviso-legal", en: "/en/aviso-legal" } },
+  openGraph: { url: "/en/aviso-legal" },
 };
 
 export default function Page() {

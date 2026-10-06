@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     images: ["/og.jpg"],
   },
   twitter: { card: "summary_large_image" },
+  verification: { google: "03s2Be1CUYAWomzHOF5GPAuQ7u--_H7c2qd8DSIOPPY" },
 };
 
 export const viewport: Viewport = { themeColor: "#f6f3ed" };

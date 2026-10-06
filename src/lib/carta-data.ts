@@ -23,7 +23,7 @@ export type Category = {
    ese plato tiene una entrada numérica allí. Los precios en texto libre
    ("Consultar" / "Ask us" / …) no están en el JSON y se quedan tal cual. */
 
-type CanonicalPrice = { amounts: number[]; sep: string | null; freeText: string | null };
+export type CanonicalPrice = { amounts: number[]; sep: string | null; freeText: string | null };
 
 function formatAmount(n: number, locale: string): string {
   const fixed = n.toFixed(2);

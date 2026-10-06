@@ -244,8 +244,8 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
         </a>
         <p className="mt-4 text-[0.65rem] text-espresso/40">
           {copy.demoNote} {copy.webBy}{" "}
-          <a href="https://mojoweb.es" target="_blank" rel="noopener noreferrer" className="underline decoration-current/50 underline-offset-2">
-            MojoWeb
+          <a href="https://webhosteleros.es" target="_blank" rel="noopener noreferrer" className="underline decoration-current/50 underline-offset-2">
+            WebHosteleros
           </a>
         </p>
       </footer>

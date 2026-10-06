@@ -3,6 +3,7 @@ import { CartaView } from "@/components/CartaView";
 import { CARTA_EN, withCanonicalPrices } from "@/lib/carta-data";
 import { FULL_ADDRESS } from "@/content/site";
 import { getMenuPrices } from "@/lib/menuPrices";
+import { menuJsonLd, jsonLdScript } from "@/lib/jsonld";
 
 export const revalidate = 300;
 
@@ -14,27 +15,18 @@ export const metadata: Metadata = {
     canonical: "/en/carta",
     languages: { es: "/carta", en: "/en/carta", de: "/de/carta", fr: "/fr/carta", "x-default": "/carta" },
   },
+  openGraph: { url: "/en/carta" },
 };
 
 export default async function CartaPageEn() {
   const menuPrices = await getMenuPrices();
   const carta = withCanonicalPrices(CARTA_EN, "en", menuPrices);
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Menu",
-    name: "La Dulce Menu",
-    inLanguage: "en",
-    hasMenuSection: carta.map((cat) => ({
-      "@type": "MenuSection",
-      name: cat.title,
-      hasMenuItem: cat.dishes.map((d) => ({ "@type": "MenuItem", name: d.name })),
-    })),
-  };
+  const jsonLd = jsonLdScript(menuJsonLd("La Dulce Menu", "en", carta, menuPrices));
 
   return (
     <>
       {/* eslint-disable-next-line react/no-danger */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <CartaView
         carta={carta}
         copy={{

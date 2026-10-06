@@ -168,7 +168,7 @@ export const HOME_ES: HomeCopy = {
     kicker: "Lo que se comenta",
     title: "Boca a boca",
     intro: "Lo que se repite, una y otra vez, en las reseñas de Google — en nuestras palabras:",
-    ratingAria: "4,4 sobre 5, con 760 reseñas en Google",
+    ratingAria: "4,4 sobre 5, con 763 reseñas en Google",
     ratingCaption: "en Google",
     strips: [
       { text: "“Desayunos y brunch que enamoran”", tone: 0 },
@@ -326,7 +326,7 @@ export const HOME_EN: HomeCopy = {
     kicker: "What people say",
     title: "Word of mouth",
     intro: "What comes up, again and again, in the Google reviews — in our words:",
-    ratingAria: "4.4 out of 5, with 760 reviews on Google",
+    ratingAria: "4.4 out of 5, with 763 reviews on Google",
     ratingCaption: "on Google",
     strips: [
       { text: "“Breakfasts and brunch to fall for”", tone: 0 },
@@ -484,7 +484,7 @@ export const HOME_DE: HomeCopy = {
     kicker: "Das sagen unsere Gäste",
     title: "Mundpropaganda",
     intro: "Was in den Google-Bewertungen immer wieder auftaucht — in unseren Worten:",
-    ratingAria: "4,4 von 5, mit 760 Bewertungen auf Google",
+    ratingAria: "4,4 von 5, mit 763 Bewertungen auf Google",
     ratingCaption: "auf Google",
     strips: [
       { text: "„Frühstück und Brunch zum Verlieben“", tone: 0 },
@@ -642,7 +642,7 @@ export const HOME_FR: HomeCopy = {
     kicker: "Ce qu'on en dit",
     title: "Le bouche-à-oreille",
     intro: "Ce qui revient, encore et encore, dans les avis Google — dans nos mots :",
-    ratingAria: "4,4 sur 5, avec 760 avis sur Google",
+    ratingAria: "4,4 sur 5, avec 763 avis sur Google",
     ratingCaption: "sur Google",
     strips: [
       { text: "« Des petits-déjeuners et un brunch à tomber »", tone: 0 },

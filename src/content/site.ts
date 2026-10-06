@@ -6,7 +6,7 @@
 
 export const SITE = {
   name: "La Dulce",
-  url: "https://ladulcelosabrigos.es",
+  url: "https://www.ladulcelosabrigos.es",
 
   // Contact
   phoneDisplay: "922 74 92 19",
@@ -32,7 +32,7 @@ export const SITE = {
   openDays: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
 
   // Reputation (Google, read from the Business Profile)
-  rating: { value: 4.4, count: 760 },
+  rating: { value: 4.4, count: 763 },
   priceRange: "€€", // ~10–20 € per person
 
   // Social profiles (for schema sameAs + footer)

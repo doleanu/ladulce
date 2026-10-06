@@ -579,8 +579,8 @@ function Footer({ copy }: { copy: HomeCopy }) {
       <p className="mt-6 text-xs opacity-60">© {SITE.name}. {copy.footer.rights}</p>
       <p className="mt-1 text-[0.65rem] opacity-60">
         {copy.footer.webBy}{" "}
-        <a href="https://mojoweb.es" target="_blank" rel="noopener noreferrer" className="underline decoration-current/50 underline-offset-2 hover:opacity-100">
-          MojoWeb
+        <a href="https://webhosteleros.es" target="_blank" rel="noopener noreferrer" className="underline decoration-current/50 underline-offset-2 hover:opacity-100">
+          WebHosteleros
         </a>
       </p>
     </footer>

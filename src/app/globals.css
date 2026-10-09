@@ -12,13 +12,14 @@
 
   /* rose (brand primary accent — text: eyebrows, prices, links) */
   --terracota: #cf6f8f;
-  --terracota-deep: #b95780;
+  --terracota-deep: #a54867;
   --rosa: #ecabc4;
   --rosa-soft: #f8dde7;
 
   /* blue (brand action colour — buttons, active states) + aqua tint */
   --azul: #4e9ec4;
-  --azul-deep: #3f86ab;
+  --azul-deep: #2f7ba3;
+  --azul-ink: #276b90; /* small blue TEXT (≥4.5:1 on rose/paper); buttons keep --azul-deep */
   --azul-soft: #d9ebf4;
   --turquesa: #bce8e9;
   --turquesa-soft: #dcf1f1;
@@ -39,6 +40,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* El `overflow-x: hidden` del body NO recorta: con html en `visible` la
+     regla se propaga al viewport y la página sigue desplazándose en
+     horizontal. Hay que ponerlo aquí, y con `clip` en vez de `hidden`
+     para no crear un contenedor de scroll que rompa `position: sticky`. */
+  overflow-x: clip;
 }
 
 body {

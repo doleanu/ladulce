@@ -48,7 +48,7 @@ export function LangSwitcher({ locale, options }: { locale: LangCode; options: L
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={TRIGGER_LABEL[locale]}
+        aria-label={`${locale.toUpperCase()} · ${TRIGGER_LABEL[locale]}`}
         className="inline-flex items-center gap-1.5 rounded-full border border-espresso/15 bg-crema/85 px-3.5 py-1.5 text-xs font-bold text-espresso/75 backdrop-blur transition-colors hover:text-espresso"
       >
         {locale.toUpperCase()}
@@ -69,7 +69,7 @@ export function LangSwitcher({ locale, options }: { locale: LangCode; options: L
               aria-current={opt.code === locale ? "true" : undefined}
               onClick={() => setOpen(false)}
               className={`flex items-center justify-between gap-2 px-4 py-2.5 text-sm font-semibold transition-colors ${
-                opt.code === locale ? "bg-terracota text-crema" : "text-espresso/75 hover:bg-espresso/5 hover:text-espresso"
+                opt.code === locale ? "bg-terracota-deep text-crema" : "text-espresso/75 hover:bg-espresso/5 hover:text-espresso"
               }`}
             >
               <span>{opt.label}</span>

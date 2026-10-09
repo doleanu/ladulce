@@ -11,6 +11,7 @@ const config: Config = {
         melocoton: "var(--melocoton)",
         mantequilla: "var(--mantequilla)",
         terracota: "var(--terracota)",
+        "terracota-deep": "var(--terracota-deep)",
         espresso: "var(--espresso)",
         azul: "var(--azul)",
         "azul-deep": "var(--azul-deep)",

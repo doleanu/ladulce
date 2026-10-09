@@ -202,7 +202,7 @@ export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
                   className={
                     "max-w-[85%] rounded-[18px] px-3.5 py-2.5 text-sm leading-snug shadow-[2px_3px_0_var(--sombra)] " +
                     (m.sender === "user"
-                      ? "rounded-br-sm bg-terracota text-crema"
+                      ? "rounded-br-sm bg-terracota-deep text-crema"
                       : "rounded-bl-sm bg-crema text-espresso")
                   }
                 >
@@ -213,7 +213,7 @@ export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
                     href={m.cta.href}
                     target={m.cta.href.startsWith("http") ? "_blank" : undefined}
                     rel={m.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="mt-2 inline-block rounded-full bg-azul px-4 py-2 text-xs font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
+                    className="mt-2 inline-block rounded-full bg-azul-deep px-4 py-2 text-xs font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
                   >
                     {m.cta.label}
                   </a>
@@ -225,7 +225,7 @@ export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
                         key={qr}
                         type="button"
                         onClick={() => handleSend(qr)}
-                        className="rounded-full border-2 border-terracota px-3 py-1 text-xs font-semibold text-terracota transition-colors hover:bg-terracota hover:text-crema"
+                        className="rounded-full border-2 border-terracota px-3 py-1 text-xs font-semibold text-terracota-deep transition-colors hover:bg-terracota-deep hover:text-crema"
                       >
                         {qr}
                       </button>
@@ -256,7 +256,7 @@ export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
               type="button"
               aria-label={copy.sendLabel}
               onClick={() => handleSend(input)}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracota text-crema transition-colors hover:bg-[var(--terracota-deep)]"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracota-deep text-crema transition-colors hover:bg-[var(--terracota-deep)]"
             >
               <SendIcon className="h-4 w-4" />
             </button>
@@ -268,7 +268,7 @@ export default function ChatWidget({ locale = "es" }: { locale?: Locale }) {
         type="button"
         aria-label={open ? copy.closeLabel : copy.openLabel}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-terracota text-crema shadow-[4px_5px_0_var(--sombra)] transition-transform hover:-translate-y-1"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-terracota-deep text-crema shadow-[4px_5px_0_var(--sombra)] transition-transform hover:-translate-y-1"
         style={{ transform: "rotate(-1.5deg)" }}
       >
         {open ? <CloseIcon className="h-6 w-6" /> : <ChatBubbleIcon className="h-6 w-6" />}

@@ -46,7 +46,7 @@ function DishRow({ name, price, note }: { name: string; price: string; note?: st
           className="mx-1 min-w-6 flex-1 self-end border-b border-dotted border-espresso/25"
           style={{ marginBottom: "0.35rem" }}
         />
-        <span className="shrink-0 whitespace-nowrap font-display font-bold text-terracota">{price}</span>
+        <span className="shrink-0 whitespace-nowrap font-display font-bold text-terracota-deep">{price}</span>
       </div>
       {note && <p className="mt-0.5 max-w-prose text-sm leading-snug text-espresso/60">{note}</p>}
     </li>
@@ -101,10 +101,10 @@ function CategorySection({ cat, index }: { cat: Category; index: number }) {
 }
 
 const CHIP_STYLES = [
-  "bg-[#f8dde7] text-[#b95780]", // pink
-  "bg-[#d9ebf4] text-[#3f86ab]", // blue
-  "bg-[#dcf1f1] text-[#3f9599]", // teal
-  "bg-[#fbeac6] text-[#a9772a]", // butter
+  "bg-[#f8dde7] text-[#a14463]", // pink
+  "bg-[#d9ebf4] text-[#276b90]", // blue
+  "bg-[#dcf1f1] text-[#2a7578]", // teal
+  "bg-[#fbeac6] text-[#8a5f1b]", // butter
 ];
 
 function CategoryChips({ cats, hidden }: { cats: Category[]; hidden: boolean }) {
@@ -149,7 +149,7 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
                 { code: "fr", label: "Français", href: copy.frHref, ariaLabel: "Afficher en français" },
               ]}
             />
-            <a href={copy.homeHref} className="text-sm font-semibold text-espresso hover:text-terracota">
+            <a href={copy.homeHref} className="text-sm font-semibold text-espresso hover:text-terracota-deep">
               {copy.back}
             </a>
           </div>
@@ -173,18 +173,18 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
           <p className="mx-auto mt-5 max-w-md text-espresso/70">{copy.intro}</p>
 
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href={TEL} className="w-full rounded-full bg-azul px-7 py-3.5 text-center text-sm font-bold text-paper shadow-md transition-transform hover:-translate-y-0.5 sm:w-auto">
+            <a href={TEL} className="w-full rounded-full bg-azul-deep px-7 py-3.5 text-center text-sm font-bold text-crema shadow-md transition-transform hover:-translate-y-0.5 sm:w-auto">
               {copy.call} · {TEL_DISPLAY}
             </a>
-            <a href={MAPS} target="_blank" rel="noopener noreferrer" className="w-full rounded-full border-2 border-espresso px-7 py-3.5 text-center text-sm font-bold text-espresso transition-colors hover:bg-espresso hover:text-paper sm:w-auto">
+            <a href={MAPS} target="_blank" rel="noopener noreferrer" className="w-full rounded-full border-2 border-espresso px-7 py-3.5 text-center text-sm font-bold text-espresso transition-colors hover:bg-espresso hover:text-crema sm:w-auto">
               {copy.directions}
             </a>
           </div>
 
           <p className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs font-semibold text-espresso/60">
-            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-terracota">@ladulcelosabrigos</a>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-terracota-deep">@ladulcelosabrigos</a>
             <span aria-hidden="true">·</span>
-            <a href={TEL} className="hover:text-terracota">{TEL_DISPLAY}</a>
+            <a href={TEL} className="hover:text-terracota-deep">{TEL_DISPLAY}</a>
           </p>
         </div>
       </section>
@@ -197,7 +197,7 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
               type="button"
               onClick={() => setTab("food")}
               aria-pressed={tab === "food"}
-              className={`${toggleBase} ${tab === "food" ? "bg-azul text-paper shadow-sm" : "text-espresso/70 hover:text-espresso"}`}
+              className={`${toggleBase} ${tab === "food" ? "bg-azul-deep text-crema shadow-sm" : "text-espresso/70 hover:text-espresso"}`}
             >
               {copy.food}
             </button>
@@ -205,7 +205,7 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
               type="button"
               onClick={() => setTab("drinks")}
               aria-pressed={tab === "drinks"}
-              className={`${toggleBase} ${tab === "drinks" ? "bg-azul text-paper shadow-sm" : "text-espresso/70 hover:text-espresso"}`}
+              className={`${toggleBase} ${tab === "drinks" ? "bg-azul-deep text-crema shadow-sm" : "text-espresso/70 hover:text-espresso"}`}
             >
               {copy.drinks}
             </button>
@@ -239,7 +239,7 @@ export function CartaView({ carta, copy }: { carta: Category[]; copy: Copy }) {
       {/* ------------------------------------------------ footer ---------- */}
       <footer className="border-t border-crema bg-crema py-10 text-center">
         <p className="text-sm text-espresso/70">{copy.footerAddress}</p>
-        <a href={TEL} className="mt-1 inline-block text-sm font-bold text-terracota hover:underline">
+        <a href={TEL} className="mt-1 inline-block text-sm font-bold text-terracota-deep hover:underline">
           {TEL_DISPLAY}
         </a>
         <p className="mt-4 text-[0.65rem] text-espresso/40">

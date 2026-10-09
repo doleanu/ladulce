@@ -107,7 +107,7 @@ function Hero({ copy }: { copy: HomeCopy }) {
           <Link
             href={copy.cartaHref}
             prefetch
-            className="paper-card inline-block bg-azul px-8 py-4 text-lg font-semibold text-crema"
+            className="paper-card inline-block bg-azul-deep px-8 py-4 text-lg font-semibold text-crema"
             style={{ "--r": "-1.5deg" } as CSSProperties}
           >
             {copy.hero.ctaMenu}
@@ -121,7 +121,7 @@ function Hero({ copy }: { copy: HomeCopy }) {
           </a>
         </div>
         <p className="ink mt-6" style={{ "--d": "640ms" } as CSSProperties}>
-          <a href="#barraquito" className="text-sm font-semibold text-espresso/60 underline decoration-espresso/20 underline-offset-4 hover:text-terracota">
+          <a href="#barraquito" className="text-sm font-semibold text-espresso/60 underline decoration-espresso/20 underline-offset-4 hover:text-terracota-deep">
             {copy.hero.barraquito}
           </a>
         </p>
@@ -170,7 +170,7 @@ function Destacados({ copy }: { copy: HomeCopy }) {
     <section id="destacados" className="relative px-5 py-24 sm:py-32 bg-[#f8dde7]">
       <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em]" style={{ color: "var(--azul-deep)" }}>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em]" style={{ color: "var(--azul-ink)" }}>
             {d.kicker}
           </p>
           <h2 className="font-display mt-3 text-5xl sm:text-7xl font-semibold text-espresso">{d.title}</h2>
@@ -187,7 +187,7 @@ function Destacados({ copy }: { copy: HomeCopy }) {
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-x-2">
                     <h3 className="font-display text-2xl font-semibold text-espresso">{item.name}</h3>
-                    <span className="whitespace-nowrap text-sm font-semibold text-terracota">{item.price}</span>
+                    <span className="whitespace-nowrap text-sm font-semibold text-terracota-deep">{item.price}</span>
                   </div>
                   <p className="mt-1 text-sm text-espresso/75">{item.note}</p>
                 </div>
@@ -197,7 +197,7 @@ function Destacados({ copy }: { copy: HomeCopy }) {
         </ul>
 
         <Reveal className="mt-12 text-center sm:mt-16" delay={120}>
-          <Link href={copy.cartaHref} prefetch className="paper-card inline-block bg-azul px-8 py-4 text-base font-semibold text-crema" style={{ "--r": "-1deg" } as CSSProperties}>
+          <Link href={copy.cartaHref} prefetch className="paper-card inline-block bg-azul-deep px-8 py-4 text-base font-semibold text-crema" style={{ "--r": "-1deg" } as CSSProperties}>
             {d.cta}
           </Link>
           <p className="mt-3 text-sm text-espresso/60">{d.ctaNote}</p>
@@ -215,7 +215,7 @@ function BarraquitoSection({ copy }: { copy: HomeCopy }) {
     <section id="barraquito" className="px-5 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{b.kicker}</p>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{b.kicker}</p>
           <h2 className="font-display mt-3 text-5xl sm:text-7xl font-semibold text-espresso">{b.title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-espresso/80">{b.body}</p>
         </Reveal>
@@ -259,7 +259,7 @@ function TerraceSection({ copy }: { copy: HomeCopy }) {
         </Reveal>
         <div className="mt-12 grid items-center gap-10 sm:mt-16 sm:grid-cols-2">
           <Reveal rotate={-2}>
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{t.kicker}</p>
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{t.kicker}</p>
             <h2 className="font-display mt-3 text-5xl sm:text-6xl font-semibold text-espresso">{t.title}</h2>
             <p className="mt-5 text-espresso/80">{t.body1}</p>
             <p className="mt-4 text-espresso/80">{t.body2}</p>
@@ -307,7 +307,7 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
     <section id="info" className="px-5 py-24 sm:py-32 bg-crema">
       <div className="mx-auto max-w-5xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{info.kicker}</p>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{info.kicker}</p>
           <h2 className="font-display mt-3 text-5xl sm:text-6xl font-semibold text-espresso">{info.title}</h2>
         </Reveal>
 
@@ -316,10 +316,10 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
             <div className="paper-card h-full p-7" style={{ "--r": "-0.8deg" } as CSSProperties}>
               <p className="text-xs font-semibold uppercase tracking-wide text-espresso/50">{info.hoursLabel}</p>
               <p className="mt-1 font-display text-2xl font-semibold text-espresso">{info.hoursValue}</p>
-              <p className="mt-0.5 text-sm font-semibold text-terracota">{info.hoursNote}</p>
+              <p className="mt-0.5 text-sm font-semibold text-terracota-deep">{info.hoursNote}</p>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-espresso/50">{info.addressLabel}</p>
               <p className="mt-1 text-espresso">{FULL_ADDRESS}</p>
-              <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-semibold text-terracota hover:underline">
+              <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-semibold text-terracota-deep hover:underline">
                 {info.directions}
               </a>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-espresso/50">{info.reservarLabel}</p>
@@ -327,7 +327,7 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
                 href={waReserva(copy.locale)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-2 font-display text-2xl font-semibold text-espresso hover:text-terracota"
+                className="mt-1 inline-flex items-center gap-2 font-display text-2xl font-semibold text-espresso hover:text-terracota-deep"
               >
                 <WhatsAppIcon className="h-6 w-6 text-[#25D366]" />
                 {SITE.whatsappDisplay}
@@ -336,7 +336,7 @@ function InfoSection({ copy }: { copy: HomeCopy }) {
               <a
                 href={`tel:${SITE.tel}`}
                 aria-label={`Tel. ${SITE.phoneDisplay}`}
-                className="mt-3 inline-flex items-center gap-2 font-display text-2xl font-semibold text-espresso hover:text-terracota"
+                className="mt-3 inline-flex items-center gap-2 font-display text-2xl font-semibold text-espresso hover:text-terracota-deep"
               >
                 <PhoneIcon className="h-6 w-6 text-azul" />
                 {SITE.phoneDisplay}
@@ -424,7 +424,7 @@ function ReviewsSection({ copy }: { copy: HomeCopy }) {
           </Reveal>
           <div>
             <Reveal>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{r.kicker}</p>
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{r.kicker}</p>
               <h2 className="font-display mt-3 text-5xl font-semibold text-espresso">{r.title}</h2>
               <p className="mt-4 text-sm text-espresso/70">{r.intro}</p>
             </Reveal>
@@ -455,7 +455,7 @@ function GallerySection({ copy }: { copy: HomeCopy }) {
     <section id="galeria" className="px-5 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{g.kicker}</p>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{g.kicker}</p>
           <h2 className="font-display mt-3 text-5xl sm:text-6xl font-semibold text-espresso">{g.title}</h2>
         </Reveal>
         <Reveal className="mt-12" delay={120}>
@@ -493,7 +493,7 @@ function ReservarSection({ copy }: { copy: HomeCopy }) {
 
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{r.kicker}</p>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{r.kicker}</p>
           <h2 className="font-display mt-3 text-5xl sm:text-7xl font-semibold text-espresso">{r.title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-espresso/80">{r.body}</p>
         </Reveal>
@@ -503,7 +503,7 @@ function ReservarSection({ copy }: { copy: HomeCopy }) {
             <p className="font-display text-2xl font-semibold text-espresso">{SITE.street}</p>
             <p className="mt-1 text-espresso/75">{`${SITE.postalCode} ${SITE.city}, ${SITE.region}`}</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <a href={waReserva(copy.locale)} target="_blank" rel="noopener noreferrer" className="paper-card inline-flex items-center gap-2 bg-azul px-7 py-3.5 font-semibold text-crema" style={{ "--r": "-1.5deg" } as CSSProperties}>
+              <a href={waReserva(copy.locale)} target="_blank" rel="noopener noreferrer" className="paper-card inline-flex items-center gap-2 bg-azul-deep px-7 py-3.5 font-semibold text-crema" style={{ "--r": "-1.5deg" } as CSSProperties}>
                 <WhatsAppIcon className="h-5 w-5" />
                 {SITE.whatsappDisplay}
               </a>
@@ -534,7 +534,7 @@ function FaqSection({ copy }: { copy: HomeCopy }) {
     <section id="faq" className="px-5 py-24 sm:py-32 bg-crema">
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota">{f.kicker}</p>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-terracota-deep">{f.kicker}</p>
           <h2 className="font-display mt-3 text-5xl sm:text-6xl font-semibold text-espresso">{f.title}</h2>
         </Reveal>
         <Reveal className="mt-10" delay={120}>
@@ -544,7 +544,7 @@ function FaqSection({ copy }: { copy: HomeCopy }) {
                 <details className="group paper-card p-0" style={{ "--r": "0deg" } as CSSProperties}>
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-display text-lg font-semibold text-espresso">
                     {item.q}
-                    <span aria-hidden="true" className="shrink-0 text-terracota transition-transform group-open:rotate-45">+</span>
+                    <span aria-hidden="true" className="shrink-0 text-terracota-deep transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <p className="px-6 pb-5 text-espresso/75">{item.a}</p>
                 </details>
@@ -610,7 +610,7 @@ export default function HomeView({ copy }: { copy: HomeCopy }) {
           />
           <a
             href="#reservar"
-            className="inline-flex min-w-[8.5rem] items-center justify-center gap-2 rounded-full bg-azul px-4 py-2 text-sm font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-w-[8.5rem] items-center justify-center gap-2 rounded-full bg-azul-deep px-4 py-2 text-sm font-semibold text-crema shadow-[2px_3px_0_var(--sombra)] transition-transform hover:-translate-y-0.5"
           >
             <WhatsAppIcon className="h-4 w-4" />
             {copy.nav.reservar}

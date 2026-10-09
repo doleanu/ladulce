@@ -123,7 +123,7 @@ export function DatePicker({
         )}
       >
         <span className="truncate">{label}</span>
-        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 shrink-0 text-terracota">
+        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 shrink-0 text-terracota-deep">
           <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
           <path d="M3 9.5h18M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
         </svg>
@@ -187,8 +187,8 @@ export function DatePicker({
                     "flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium transition-colors",
                     disabled && "cursor-not-allowed text-espresso/20",
                     !disabled && !isSelected && "text-espresso hover:bg-espresso/10",
-                    isSelected && "bg-terracota text-crema",
-                    !isSelected && isToday && !disabled && "text-terracota font-semibold"
+                    isSelected && "bg-terracota-deep text-crema",
+                    !isSelected && isToday && !disabled && "text-terracota-deep font-semibold"
                   )}
                 >
                   {date.getDate()}

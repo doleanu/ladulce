@@ -67,7 +67,7 @@ export function MenuPriceEditor({
           type="button"
           onClick={handleSave}
           disabled={status === "saving"}
-          className="rounded-full bg-azul px-6 py-2 text-sm font-semibold uppercase tracking-wide text-crema transition-transform hover:scale-[1.02] disabled:opacity-60"
+          className="rounded-full bg-azul-deep px-6 py-2 text-sm font-semibold uppercase tracking-wide text-crema transition-transform hover:scale-[1.02] disabled:opacity-60"
         >
           Guardar cambios
         </button>
@@ -98,11 +98,11 @@ export function MenuPriceEditor({
                               inputMode="decimal"
                               defaultValue={formatAmount(amount)}
                               onChange={(e) => updateAmount(cat.id, d.idx, ai, e.target.value)}
-                              className="w-16 rounded-lg border border-espresso/15 bg-white px-2 py-1 text-right text-sm font-bold text-terracota outline-none focus:border-terracota"
+                              className="w-16 rounded-lg border border-espresso/15 bg-white px-2 py-1 text-right text-sm font-bold text-terracota-deep outline-none focus:border-terracota"
                             />
                           </span>
                         ))}
-                        <span className="text-sm font-bold text-terracota">€</span>
+                        <span className="text-sm font-bold text-terracota-deep">€</span>
                       </span>
                     )}
                   </li>

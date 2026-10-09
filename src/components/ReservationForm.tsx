@@ -201,7 +201,7 @@ export function ReservationForm({ locale = "es" }: { locale?: Locale }) {
 
       <button
         type="submit"
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-azul px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-crema transition-transform hover:scale-[1.02]"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-azul-deep px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-crema transition-transform hover:scale-[1.02]"
       >
         <WhatsAppIcon className="h-5 w-5" />
         {t.submit}

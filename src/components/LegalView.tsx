@@ -15,10 +15,10 @@ export function LegalView({ doc, locale }: { doc: LegalDoc; locale: Locale }) {
             La Dulce
           </a>
           <div className="flex items-center gap-4">
-            <a href={langHref} className="text-xs font-bold uppercase tracking-wide text-terracota hover:text-espresso">
+            <a href={langHref} className="text-xs font-bold uppercase tracking-wide text-terracota-deep hover:text-espresso">
               {langLabel}
             </a>
-            <a href={home} className="text-sm font-semibold text-espresso hover:text-terracota">
+            <a href={home} className="text-sm font-semibold text-espresso hover:text-terracota-deep">
               {back}
             </a>
           </div>
@@ -44,7 +44,7 @@ export function LegalView({ doc, locale }: { doc: LegalDoc; locale: Locale }) {
       </article>
 
       <footer className="border-t border-crema bg-crema py-8 text-center">
-        <a href={home} className="text-sm font-semibold text-terracota hover:underline">{back}</a>
+        <a href={home} className="text-sm font-semibold text-terracota-deep hover:underline">{back}</a>
       </footer>
     </main>
   );

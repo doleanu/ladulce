@@ -7,11 +7,11 @@ import { metadataBase } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: metadataBase(),
   title: {
-    default: "La Dulce — Café & Brunch en Los Abrigos, Tenerife",
+    default: "La Dulce — Desayunos, Brunch y Café en Los Abrigos, Tenerife",
     template: "%s · La Dulce",
   },
   description:
-    "Café, brunch y terraza en Los Abrigos, Tenerife. Barraquito canario, pancakes, Eggs Benedict, smash burger y cheesecake. Abierto de martes a domingo hasta las 22:30. Llama al 922 74 92 19.",
+    "Desayunos, brunch y café en Los Abrigos, sur de Tenerife. Barraquito, pancakes, Eggs Benedict y smash burger en terraza. Abierto de martes a domingo hasta las 22:30. Tel. 922 74 92 19.",
   openGraph: {
     title: "La Dulce — Café & Brunch en Los Abrigos",
     description:

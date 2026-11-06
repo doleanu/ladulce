@@ -6,8 +6,9 @@
  */
 import { CARTA_ES, CARTA_EN, CARTA_DE, CARTA_FR, withCanonicalPrices } from "@/lib/carta-data";
 import { getMenuPrices } from "@/lib/menuPrices";
-import { buildFromCode, renderCarta, CATEGORY_IDS } from "@/lib/menuData";
-import { validateMenuData, parsePriceInput, priceToInput, formatPrice } from "@/lib/menuModel";
+import { renderCarta } from "@/lib/menuData";
+import { CATEGORIES, cfg, seedFromCode } from "@/lib/pricelist/instance";
+import { validatePriceList, parsePriceInput, priceToInput, formatPrice } from "@/lib/pricelist/model";
 
 const CODE = { es: CARTA_ES, en: CARTA_EN, de: CARTA_DE, fr: CARTA_FR } as const;
 let bad = 0;
@@ -16,8 +17,8 @@ const strip = (c: ReturnType<typeof renderCarta>) =>
 
 (async () => {
   const prices = await getMenuPrices();
-  const data = buildFromCode(prices);
-  const v = validateMenuData(JSON.parse(JSON.stringify(data)), CATEGORY_IDS);
+  const data = seedFromCode(prices);
+  const v = validatePriceList(JSON.parse(JSON.stringify(data)), CATEGORIES.map((c) => c.id), cfg);
   if (!v.ok) { console.log("SEED INVALID:", v.error); process.exit(1); }
   for (const lang of ["es", "en", "de", "fr"] as const) {
     const a = JSON.stringify(strip(renderCarta(data, lang)));
@@ -36,6 +37,6 @@ const strip = (c: ReturnType<typeof renderCarta>) =>
 
   // price parsing round-trips
   const cases = ["8", "8,90", "8.9", "3,00 – 3,50", "3 - 3,5", "5 / 6", "10€", "Consultar", "", "8,9,0", "1000000", "a".repeat(60)];
-  for (const c of cases) { const p = parsePriceInput(c); console.log(JSON.stringify(c.slice(0, 20)).padEnd(24), "→", p ? `${p.kind}: ${priceToInput(p)} | es ${formatPrice(p, "es")} | en ${formatPrice(p, "en")}` : "INVALID"); }
+  for (const c of cases) { const p = parsePriceInput(c, cfg); console.log(JSON.stringify(c.slice(0, 20)).padEnd(24), "→", p ? `${p.kind}: ${priceToInput(p, cfg)} | es ${formatPrice(p, "es", cfg)} | en ${formatPrice(p, "en", cfg)}` : "INVALID"); }
   process.exit(bad ? 1 : 0);
 })();

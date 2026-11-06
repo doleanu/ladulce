@@ -1,15 +1,11 @@
-import { CARTA_ES, DRINK_IDS } from "@/lib/carta-data";
-import { getMenuData } from "@/lib/menuData";
 import { LogoutButton } from "@/components/admin/LogoutButton";
-import { MenuEditor } from "@/components/admin/MenuEditor";
+import { PriceListEditor } from "@/components/admin/PriceListEditor";
+import { editorConfig, pl } from "@/lib/pricelist/instance";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminMenuPage() {
-  const { data } = await getMenuData();
-  const drinkIds: readonly string[] = DRINK_IDS;
-  const categories = CARTA_ES.map((c) => ({ id: c.id, title: c.title, isDrink: drinkIds.includes(c.id) }));
-
+  const { data } = await pl.getData();
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-8 sm:px-8">
       <div className="flex items-start justify-between gap-4">
@@ -33,7 +29,7 @@ export default async function AdminMenuPage() {
       </div>
 
       <div className="mt-6">
-        <MenuEditor categories={categories} initialData={data} />
+        <PriceListEditor ec={editorConfig} initialData={data} />
       </div>
     </main>
   );

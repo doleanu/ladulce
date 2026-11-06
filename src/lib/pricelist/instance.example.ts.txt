@@ -1,0 +1,54 @@
+/* ---------------------------------------------------------------------------
+   admin-kit · PER-SITE FILE. Copy to `instance.ts` and adapt. This is the only
+   place that knows the client's data: config, storage, seed from code, auth.
+   --------------------------------------------------------------------------- */
+import { createPriceList } from "./service";
+import { blobStorage } from "./storage.blob";
+import { seedPrice, type PriceListConfig, type PriceListData } from "./model";
+import type { EditorConfig } from "@/components/admin/PriceListEditor";
+import { getCookie } from "./handler";
+import { ADMIN_COOKIE, isValidSession } from "./auth"; // from template-auth/, or the site's own auth
+
+export const cfg: PriceListConfig = {
+  siteId: "client",
+  defaultLang: "es",
+  langs: ["es", "en"],
+  langStyle: {
+    es: { decimalSep: ",", symbol: "suffix" },
+    en: { decimalSep: ".", symbol: "prefix" },
+  },
+  decimals: "fixed2",
+  range: "unit-each",
+  fromWord: { es: "desde", en: "from" },
+};
+
+// 1. The fixed categories (titles/order stay in the site's code).
+export const CATEGORIES = [{ id: "main", title: "Platos", group: "food" }];
+
+// 2. Seed: what the site shows today, as a PriceListData. Use seedPrice() for the price strings.
+function seed(): PriceListData {
+  return { version: 0, updatedAt: "", categories: CATEGORIES.map((c) => ({ id: c.id, items: [] })) };
+}
+
+export const pl = createPriceList({
+  cfg,
+  categoryIds: CATEGORIES.map((c) => c.id),
+  storage: blobStorage(),
+  seed,
+  production: process.env.VERCEL_ENV === "production",
+});
+
+export const editorConfig: EditorConfig = {
+  cfg,
+  noun: { one: "plato", many: "platos" },
+  langs: [{ code: "en", label: "English" }],
+  groups: [{ id: "food", label: "Comida" }],
+  categories: CATEGORIES,
+  features: { note: true, highlight: false },
+  endpoint: "/api/admin/pricelist",
+  priceHint: "8,90 · 3 – 3,50 · Consultar",
+  viewHref: "/carta",
+};
+
+export const isAuthed = (req: Request) => isValidSession(getCookie(req, ADMIN_COOKIE));
+export const REVALIDATE_PATHS = ["/", "/carta", "/admin/precios"];

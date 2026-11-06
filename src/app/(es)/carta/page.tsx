@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { CartaView } from "@/components/CartaView";
-import { CARTA_ES, withCanonicalPrices } from "@/lib/carta-data";
 import { FULL_ADDRESS } from "@/content/site";
-import { getMenuPrices } from "@/lib/menuPrices";
+import { getCarta } from "@/lib/menuData";
 import { menuJsonLd, jsonLdScript } from "@/lib/jsonld";
 
-export const revalidate = 300;
+// Refreshed on demand when Manu saves in /admin/menu; this is only the daily safety net (keeps Blob reads minimal).
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Carta y menú de desayunos y brunch en Los Abrigos",
@@ -19,9 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default async function CartaPage() {
-  const menuPrices = await getMenuPrices();
-  const carta = withCanonicalPrices(CARTA_ES, "es", menuPrices);
-  const jsonLd = jsonLdScript(menuJsonLd("Carta de La Dulce", "es", carta, menuPrices));
+  const carta = await getCarta("es");
+  const jsonLd = jsonLdScript(menuJsonLd("Carta de La Dulce", "es", carta));
 
   return (
     <>

@@ -5,7 +5,13 @@
    física de bebidas — los precios provienen de la web anterior.
    --------------------------------------------------------------------------- */
 
-export type Dish = { name: string; price: string; note?: string };
+export type Dish = {
+  name: string;
+  price: string;
+  note?: string;
+  /** Numeric price when the dish has exactly one clean amount (used by the JSON-LD offers). */
+  amount?: number;
+};
 export type Category = {
   id: string;
   title: string;
